@@ -1,7 +1,7 @@
 Docker use
 =====
 
-Working principle2
+what
 -----------------
 
 This is ROS package for automated conversion of STEP models to URDF format. 
