@@ -1,4 +1,4 @@
-STEP FILE CREATION
+Step file creation
 =====
 
 
@@ -16,14 +16,14 @@ In urdf the kinematic chain is defined with links and joints between them. To cr
 
 All joints "description" CAD elements need to be in the subassembly with the name "urdf*" or "URDF*". This subassembly needs to be created on the top level of the CAD tree, like in the image:
 
-<img src="./figures/tree_clean.PNG" 
-     height="300"   align="center" >  <img src="./figures/tree_urdf.PNG" 
-     height="300"   align="center" >  
 
+.. image:: figures_creating_step/tree_clean.PNG
+   :width: 700px
 
 Each created joint CAD element needs to be named "joint_PARENT_to_CHILD_*". Where "joint_" and "\_to_" are joint tags and "PARENT" and "CHILD" are urdf links names of your choice, that the defined joint is connecting. As per convention "\*"  after the last underscore can be substituted with anything. Special joint definitions "joint_base_*" also need to be added, that mark the origin of the whole urdf coordinate system and root of the kinematic tree.
 
 Joint definitions define the urdf kinematics chains by defining a child from the previous joint as a parent in the next one. The chain of definitions should start with the link "base" from "joint_base_*" and be unbroken to the end nodes. The kinematic tree can be branched to different end nodes.
+
 
 Joint definition CAD element
 -----------------
@@ -35,9 +35,9 @@ The coordinate system of the subpart represents the joint coordinate system in u
 
 The shape in the joint subassembly is saved to the STEP file but it is later ignored in the urdf creation, so any user may choose his own desired shapes inside of joints definitions. Because the Fusion 360 doesn't want to save the part with no shape to the STEP file we added the ball shape to the part representing the joint type. 
 
-<img src="./figures/joint_cad_definition.PNG" 
-     height="300"   align="center" >  
 
+.. image:: figures_creating_step/joint_cad_definition.PNG
+   :width: 700px
 
 We created one CAD joint definition that we mated as an independent copy for all our joint definitions. For each copy, we changed the subassembly name to the required link names that it was connecting and we changed the internal part name to the joint type that it was representing. 
 
@@ -58,5 +58,6 @@ The shapes than are not hiarchily in any link they are automatily added to urdf 
 
 Colors..
 
-<img src="./figures/tree_shapes.PNG" 
-     height="300"   align="center" >  
+
+.. image:: figures_creating_step/tree_shapes.PNG
+   :width: 700px

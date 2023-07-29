@@ -19,3 +19,14 @@ Contents
    usage
    api
    urdf_converter/urdf_converter
+
+
+
+Funding
+--------
+
+.. image:: figures_main_page/rosin_eu_flag.PNG
+   :width: 100px
+   :align: left
+
+This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 871352. 
