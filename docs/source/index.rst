@@ -19,6 +19,7 @@ Contents
    usage
    api
    urdf_converter/urdf_converter
+   robotic_platforms/robotic_platforms
 
 
 
