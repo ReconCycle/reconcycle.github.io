@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Reconcycle'
+copyright = '2023, Reconcycle.eu'
+author = 'Reconcycle'
 
 release = '0.1'
 version = '0.1.0'
@@ -30,6 +30,14 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
-
+html_static_path = ['_static']
+html_logo = "figures_main_page/reconcycle-transparent.png"
+html_theme_options = {
+    'logo_only': True,
+    'display_version': False,
+}
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+## Icon
+html_favicon = "favicon.ico"
