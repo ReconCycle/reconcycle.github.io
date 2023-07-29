@@ -7,10 +7,8 @@ The program takes as input the STEP file (left images) of the desired robot or r
 The package created contains the URDF description, the STL mesh files required by URDF description, and the ROS launch file to load the data into the ROS for visualization (center images) and control (right images).
 
 
-
-
 urdf-from-step-examples
-===================================
+-------------
 Package manuals and examples of input and output data for package urdf_from_step.
 
 ## robot_arm example
