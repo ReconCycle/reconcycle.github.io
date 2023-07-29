@@ -6,9 +6,9 @@ Welcome to Lumache's documentation!
 
    This project is under active development.
 
-Contents
---------
+
 
 .. toctree::
+   :maxdepth: 1
 
    urdf
