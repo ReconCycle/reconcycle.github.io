@@ -18,7 +18,7 @@ Contents
 
 .. toctree::
    :maxdepth: 2
-   
+
    usage
    api
-   urdf/index
+   urdf_converter/urdf_converter
