@@ -25,7 +25,7 @@ Contents
 Funding
 --------
 
-.. image:: figures_main_page/rosin_eu_flag.PNG
+.. image:: figures_main_page/rosin_eu_flag.jpg
    :width: 100px
    :align: left
 
