@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'Reconcycle'
-copyright = '2023, Reconcycle'
+copyright = '2023, Reconcycle.eu'
 author = 'Reconcycle'
 
 release = '0.1'
