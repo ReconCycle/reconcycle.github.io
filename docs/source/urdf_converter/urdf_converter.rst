@@ -7,6 +7,13 @@ The program takes as input the STEP file (left images) of the desired robot or r
 The package created contains the URDF description, the STL mesh files required by URDF description, and the ROS launch file to load the data into the ROS for visualization (center images) and control (right images).
 
 
+.. toctree::
+   :maxdepth: 1
+
+   docker_use
+   creating_step_file
+
+   
 urdf-from-step-examples
 -------------
 Package manuals and examples of input and output data for package urdf_from_step.
@@ -41,8 +48,3 @@ Instructions for URDF visualization are provided [hier](https://github.com/Re+co
 
 
 
-.. toctree::
-   :maxdepth: 1
-
-   docker_use
-   creating_step_file
