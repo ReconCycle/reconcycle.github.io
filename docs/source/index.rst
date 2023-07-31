@@ -1,6 +1,11 @@
 Welcome to Reconcycle's documentation!
 ===================================
 
+.. image:: figures_main_page/jsi-logo-1-150x150.png
+   :width: 100px
+   :align: right
+
+
 ReconCycle aims to substantially reduce human effort and increase accuracy and efficiency of recycling. As ReconCycle uses highly compliant robots, humans will be able to operate together with the machines to complete the missing steps. This reduces automation complexity further and brings this project into a feasible regime.
 
 Check out the :doc:`urdf_converter` section for further information, including
