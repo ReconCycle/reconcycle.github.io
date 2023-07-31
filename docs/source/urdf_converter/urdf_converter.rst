@@ -11,23 +11,23 @@ The package created contains the URDF description, the STL mesh files required b
 Simple robot arm:
 
 .. image:: figures_creating_step/robot_arm_cad_with_cs.PNG
-   :width: 700px
+   :width: 200px
 
 .. image:: figures_rviz/rviz_tf_center.png
-   :width: 700px
+   :width: 200px
 
 .. image:: figures_rviz/rviz_moved.png
-   :width: 700px
+   :width: 200px
 
 
 Cutter module from Reconcycle project:
 
 .. image:: figures_reconcycle/cad_cs_gilotina.png
-   :width: 700px
+   :width: 200px
 .. image:: figures_reconcycle/rviz_tf_gilotina.png
-   :width: 700px
+   :width: 200px
 .. image:: figures_reconcycle/gilotina2.png
-   :width: 700px
+   :width: 200px
 
 
 
