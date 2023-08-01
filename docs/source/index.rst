@@ -20,10 +20,15 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :caption: Overview
 
    robotic_platforms/robotic_platforms
    software_architecture/overview
-   user_guide/quickstart
+
+   :caption: Tutorials
+   user_guide/index
+
+   :caption: Standalone tools
    urdf_converter/urdf_converter
 
 
