@@ -1,7 +1,6 @@
 Hardware
 ===================================
 
-test
 
 Modular robotic platform and the archetypical module
 ------------------------------

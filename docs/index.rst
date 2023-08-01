@@ -1,5 +1,4 @@
 Welcome to Reconcycle's documentation!
-===================================
 
 .. image:: figures_main_page/jsi-logo-1-150x150.png
    :width: 100px
@@ -12,6 +11,9 @@ ReconCycle aims to substantially reduce human effort and increase the accuracy a
 
    This project is under active development.
 
+
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
