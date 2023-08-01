@@ -26,12 +26,6 @@ Welcome to Reconcycle's documentation!
 
    urdf_converter/urdf_converter
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-   Project website <https://reconcycle.eu>
-   Youtube channel <https://youtube.com/@reconcycle>
-
 .. meta::
    :description lang=en: Documentation for the software and hardware developed within the ReconCycle project.
 
@@ -55,6 +49,16 @@ If you use ReconCycle hardware or software elements in your work, please conside
 - M. Simonič, R. Pahič, T. Gašpar, S. Abdolshah, S. Haddadin, M. G. Catalano, F. Wörgötter and A. Ude. "Modular ROS-based software architecture for reconfigurable, Industry 4.0 compatible robotic workcells," 2021 20th International Conference on Advanced Robotics (ICAR), Ljubljana, Slovenia, 2021, pp. 44-51, doi: 10.1109/ICAR53236.2021.9659378.
 - P. Radanovič, J. Jereb, I. Kovač and A. Ude. "Design of a Modular Robotic Workcell Platform Enabled by Plug & Produce Connectors," 2021 20th International Conference on Advanced Robotics (ICAR), Ljubljana, Slovenia, 2021, pp. 304-309, doi: 10.1109/ICAR53236.2021.9659345.
 
+Links
+=====
+
+- Project website <https://reconcycle.eu>
+- GitHub repositories <https://github.vom/reconcycle>
+- Youtube channel <https://youtube.com/@reconcycle>
+- Follow us at LinkedIn <https://www.linkedin.com/company/reconcycle>
+
+- Internal Nextcloud repository <https://cloud.reconcycle.eu>
+
 
 Funding
 =======
@@ -63,4 +67,4 @@ Funding
    :width: 100px
    :align: left
 
-This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 871352. 
+This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 871352 <https://cordis.europa.eu/project/id/871352>. 
