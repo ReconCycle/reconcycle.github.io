@@ -6,7 +6,7 @@ Welcome to Reconcycle's documentation!
    :align: right
 
 
-ReconCycle aims to substantially reduce human effort and increase accuracy and efficiency of recycling. As ReconCycle uses highly compliant robots, humans will be able to operate together with the machines to complete the missing steps. This reduces automation complexity further and brings this project into a feasible regime.
+ReconCycle aims to substantially reduce human effort and increase the accuracy and efficiency of recycling. As ReconCycle uses highly compliant robots, humans will be able to operate together with the machines to complete the missing steps. This reduces automation complexity further and brings this project into a feasible regime.
 
 Check out the :doc:`urdf_converter` section for further information, including
 how to :ref:`installation` the project.
@@ -23,8 +23,6 @@ Contents
    
    robotic_platforms/robotic_platforms
    urdf_converter/urdf_converter
-
-
 
 
 Funding
