@@ -18,6 +18,8 @@ extensions = [
     #'sphinx.ext.autosummary',
     #'sphinx.ext.intersphinx',
     'sphinx.ext.githubpages',
+    'sphinx_design',
+    'sphinx_copybutton',
 ]
 
 intersphinx_mapping = {
@@ -39,7 +41,13 @@ html_logo = "figures_main_page/reconcycle-transparent.png"
 #}
 
 html_theme = 'furo'
-html_theme_options = {}
+html_theme_options = {
+    "source_repository": "https://github.com/reconcycle/reconcycle.github.io/",
+    "source_branch": "main",
+    "source_directory": "docs/",
+}
+master_doc = 'index'
+
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'

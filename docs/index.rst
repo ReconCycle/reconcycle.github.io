@@ -1,8 +1,39 @@
+======================================
 Welcome to Reconcycle's documentation!
+======================================
 
-.. image:: figures_main_page/jsi-logo-1-150x150.png
-   :width: 100px
-   :align: right
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Overview
+
+   robotic_platforms/robotic_platforms
+   software_architecture/overview
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Manuals
+
+   user_guide/index
+   developer_guide
+   tutorials/tutorials
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Standalone tools
+
+   urdf_converter/urdf_converter
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   Project website <https://reconcycle.eu>
+   Youtube channel <https://youtube.com/@reconcycle>
+
+.. meta::
+   :description lang=en: Documentation for the software and hardware developed within the ReconCycle project.
 
 
 ReconCycle aims to substantially reduce human effort and increase the accuracy and efficiency of recycling. As ReconCycle uses highly compliant robots, humans will be able to operate together with the machines to complete the missing steps. This reduces automation complexity further and brings this project into a feasible regime.
@@ -12,32 +43,8 @@ ReconCycle aims to substantially reduce human effort and increase the accuracy a
    This project is under active development.
 
 
-Contents
---------
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Overview
-   robotic_platforms/robotic_platforms
-   software_architecture/overview
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Manuals
-   user_guide/index
-   developer_guide
-   tutorials/tutorials
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Standalone tools
-   urdf_converter/urdf_converter
-
-
-
 References
-----------
+==========
 
 If you use ReconCycle hardware or software elements in your work, please consider citing the following papers:
 
@@ -46,7 +53,7 @@ If you use ReconCycle hardware or software elements in your work, please conside
 
 
 Funding
---------
+=======
 
 .. image:: figures_main_page/rosin_eu_flag.jpg
    :width: 100px
