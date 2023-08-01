@@ -15,13 +15,24 @@ ReconCycle aims to substantially reduce human effort and increase the accuracy a
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents
+   :caption: Overview
    robotic_platforms/robotic_platforms
    software_architecture/overview
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Manuals
    user_guide/index
    developer_guide/index
    tutorials/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Standalone tools
    urdf_converter/urdf_converter
+
+
 
 References
 ----------
