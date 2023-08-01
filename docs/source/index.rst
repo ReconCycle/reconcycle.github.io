@@ -28,8 +28,10 @@ how to :ref:`installation` the project.
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: Tutorials
+   :caption: Manuals
    user_guide/index
+   developer_guide/index
+   tutorials/index
 
 .. toctree::
    :maxdepth: 2
