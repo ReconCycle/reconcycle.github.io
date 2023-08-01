@@ -1,5 +1,5 @@
 ======================================
-Welcome to Reconcycle's documentation!
+Welcome to ReconCycle project documentation!
 ======================================
 
 .. toctree::
@@ -52,12 +52,11 @@ If you use ReconCycle hardware or software elements in your work, please conside
 Links
 =====
 
-- Project website <https://reconcycle.eu>
-- GitHub repositories <https://github.vom/reconcycle>
-- Youtube channel <https://youtube.com/@reconcycle>
-- Follow us at LinkedIn <https://www.linkedin.com/company/reconcycle>
-
-- Internal Nextcloud repository <https://cloud.reconcycle.eu>
+- `Project website <https://reconcycle.eu>`_
+- `GitHub repositories <https://github.vom/reconcycle>`_
+- `Youtube channel <https://youtube.com/@reconcycle>`_
+- `Follow us at LinkedIn <https://www.linkedin.com/company/reconcycle>`_
+- `Internal Nextcloud repository <https://cloud.reconcycle.eu>`_
 
 
 Funding
@@ -67,4 +66,4 @@ Funding
    :width: 100px
    :align: left
 
-This project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No. 871352 <https://cordis.europa.eu/project/id/871352>. 
+This project has received funding from the European Union's `Horizon 2020 research and innovation programme under grant agreement No. 871352 <https://cordis.europa.eu/project/id/871352>`_. 
