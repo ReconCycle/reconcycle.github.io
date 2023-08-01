@@ -26,8 +26,8 @@ Contents
    :maxdepth: 2
    :caption: Manuals
    user_guide/index
-   developer_guide/index
-   tutorials/index
+   developer_guide
+   tutorials/tutorials
 
 .. toctree::
    :maxdepth: 2
