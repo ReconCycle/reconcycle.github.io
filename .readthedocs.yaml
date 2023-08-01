@@ -14,7 +14,7 @@ build:
     pre_install:
       - echo "Learn bash programming from LinuxHint.com"
     post_build:
-      - echo "Learn bash programming from LinuxHint3.com"
+      - ls
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
   configuration: docs/source/conf.py
