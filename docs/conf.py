@@ -16,10 +16,11 @@ extensions = [
     #'sphinx.ext.doctest',
     #'sphinx.ext.autodoc',
     #'sphinx.ext.autosummary',
-    #'sphinx.ext.intersphinx',
+    'sphinx.ext.intersphinx',
     'sphinx.ext.githubpages',
     'sphinx_design',
     'sphinx_copybutton',
+    'sphinx.ext.extlinks',
 ]
 
 intersphinx_mapping = {
@@ -39,6 +40,7 @@ html_logo = "figures_main_page/reconcycle-transparent.png"
 #    'logo_only': True,
 #    'display_version': False,
 #}
+html_baseurl = 'https://reconcycle.github.io'
 
 html_theme = 'furo'
 html_theme_options = {
