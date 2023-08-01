@@ -1,11 +1,18 @@
-on: [push]
+name: Deploy Sphinx documentation to Pages
+
+on:
+  push:
+    branches: [master] # branch to trigger deployment
 
 jobs:
-  build:
-    name: Push Sphinx Pages
-    runs-on: ubuntu-latest
+  pages:
+    runs-on: ubuntu-20.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
     steps:
-    - uses: seanzhengw/sphinx-pages@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        create_readme: true
+    - id: deployment
+      uses: sphinx-notes/pages@v3
