@@ -43,8 +43,7 @@ The shape in the joint subassembly is saved to the STEP file but it is later ign
 
 
 .. image:: figures_creating_step/joint_cad_definition.PNG
-   :width: 350px
-
+   :width: 700px
 
 We created one CAD joint definition that we mated as an independent copy for all our joint definitions. For each copy, we changed the subassembly name to the required link names that it was connecting and we changed the internal part name to the joint type that it was representing. 
 
@@ -72,3 +71,7 @@ The shapes than are not hiarchily in any link they are automatily added to urdf 
 
 ..
    Colors..
+
+
+.. image:: figures_creating_step/tree_shapes.PNG
+   :width: 350px
