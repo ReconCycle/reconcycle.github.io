@@ -1,5 +1,22 @@
-Working principle
+Development manual
 ===============
 
-The URDF file is generated in the following steps. First, the STEP file is loaded and its contents are analyzed using tools from the Open Cascade Technology (OCCT) library [1]. The analysis looks for keywords such as "joint" and "link" in the part names or in the assembly names in the model design tree. The instances with these keywords in their names represent the corresponding "joint" and "link" building blocks of URDF. The remaining part names containing the keyword encode the connections between individual URDF elements and their names in the URDF file. Once these instances and their connections have been identified, the correct local transformation between them must be computed from the values of their base coordinate systems in the STEP file. The calculated local transformations are transformed accordingly into the coordinate system values of the "joint" and "link" URDF definitions. The instances that do not have keywords in their names represent geometric shapes. They are transformed into the STL mesh specified in the appropriate local coordinate system according to the given URDF tree structure. From the collected and computed URDF data, the XML in URDF format is created using the urdfdom parser library. Finally, everything is stored in a newly created ROS package.
 
+Run with development compose:
+
+.. code-block:: bash
+
+    cd docker-compose/devel/
+    docker-compose up
+
+.. code-block:: bash
+
+    docker run urdf-from-step:latest .......
+    docker run -it -v /home/rok/catkin_ws/src/urdf_from_step:/ros_ws/src/urdf_from_step -v /home/rok/Documents/urdf-from-step-examples/examples/robot_arm/input_step_files:/input_step_files -v /home/rok/Documents/urdf-from-step-examples/examples/robot_arm/output_ros_urdf_packages:/output_ros_urdf_packages urdf-from-step:latest
+
+
+Push builded docker image:
+
+.. code-block:: bash
+    
+    docker image push ghcr.io/reconcycle/urdf-from-step:latest
