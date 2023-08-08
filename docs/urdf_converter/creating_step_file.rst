@@ -8,7 +8,8 @@ Creation of urdf from step file with program `urdf_from_step <https://github.com
 
 .. image:: figures_creating_step/robot_arm_cad.PNG
    :width: 350px
-
+.. image:: figures_creating_step/robot_arm_cad_with_cs.PNG
+   :width: 350px
 
 Joint and link definitons
 -----------------
@@ -18,6 +19,8 @@ All joints "description" CAD elements need to be in the subassembly with the nam
 
 
 .. image:: figures_creating_step/tree_clean.PNG
+   :width: 350px
+.. image:: figures_creating_step/tree_urdf.PNG
    :width: 350px
 
 Each created joint CAD element needs to be named "joint_PARENT_to_CHILD_*". Where "joint_" and "\_to_" are joint tags and "PARENT" and "CHILD" are urdf links names of your choice, that the defined joint is connecting. As per convention "\*"  after the last underscore can be substituted with anything. Special joint definitions "joint_base_*" also need to be added, that mark the origin of the whole urdf coordinate system and root of the kinematic tree.
