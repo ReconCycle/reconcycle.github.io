@@ -56,5 +56,6 @@ The URDF file is generated in the following steps. First, the STEP file is loade
    converting_with_ros
    creating_step_file
    examples
+   devel_guide
 
    
