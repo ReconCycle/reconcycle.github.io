@@ -26,7 +26,7 @@ All joints "description" CAD elements need to be in the subassembly with the nam
 .. image:: figures_creating_step/tree_urdf.PNG
    :width: 350px
 
-Each created joint CAD element needs to be named "joint_PARENT_to_CHILD_*". Where "joint_" and "\_to_" are joint tags and "PARENT" and "CHILD" are urdf links names of your choice, that the defined joint is connecting. As per convention "\*"  after the last underscore can be substituted with anything. Special joint definitions "joint_base_*" also need to be added, that mark the origin of the whole urdf coordinate system and root of the kinematic tree.
+Each created joint CAD element needs to be named "joint_PARENT_to_CHILD_*". Where "joint_" and "_to_" are joint tags and "PARENT" and "CHILD" are urdf links names of your choice, that the defined joint is connecting. As per convention "\*"  after the last underscore can be substituted with anything. Special joint definitions "joint_base_*" also need to be added, that mark the origin of the whole urdf coordinate system and root of the kinematic tree.
 
 Joint definitions define the urdf kinematics chains by defining a child from the previous joint as a parent in the next one. The chain of definitions should start with the link "base" from "joint_base_*" and be unbroken to the end nodes. The kinematic tree can be branched to different end nodes.
 
@@ -43,7 +43,7 @@ The shape in the joint subassembly is saved to the STEP file but it is later ign
 
 
 .. image:: figures_creating_step/joint_cad_definition.PNG
-   :width: 700px
+   :width: 350x
 
 We created one CAD joint definition that we mated as an independent copy for all our joint definitions. For each copy, we changed the subassembly name to the required link names that it was connecting and we changed the internal part name to the joint type that it was representing. 
 
@@ -60,10 +60,12 @@ Not all link names from urdf assembly definiton need to have shape definions
 
 The shapes than are not hiarchily in any link they are automatily added to urdf base link
 
-[//]: # "STL also exported automatic"
+..
+   [//]: # "STL also exported automatic"
 
-Colors..
+..
+   Colors..
 
 
 .. image:: figures_creating_step/tree_shapes.PNG
-   :width: 700px
+   :width: 350px

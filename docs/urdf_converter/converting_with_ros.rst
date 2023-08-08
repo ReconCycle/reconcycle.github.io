@@ -7,13 +7,15 @@ Runing
 
 The prepared step file is turned to the corresponding ROS package containing URDF like this:
 
-.. code-block:: console
+.. code-block:: bash
+
     roslaunch urdf_from_step build_urdf_from_step.launch step_file_path:="/input_step_files/robot_arm.step" urdf_package_name:="robot_arm"
 
 
 The created package needs to be added to the catkin workspace for building, sourcing, and launching:
 
-.. code-block:: console
+.. code-block:: bash
+    
     catkin build robot_arm
     cd catkin_ws
     source devel/setup.bash
