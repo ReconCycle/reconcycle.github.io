@@ -3,7 +3,7 @@ Step file creation
 
 
 
-Creation of urdf from step file with program [urdf_from_step](https://github.com/ReconCycle/urdf_from_step) is possible by adding properly named parts representing joints coordinates systems (right) to the robot shape CAD file (left). The addition of joint definitions is possible in any CAD software. Definitions can be added to the robot shape in CAD program-specific native format or to the robot shape already in step file format. For this example, we used Fusion 360 as a CAD program.
+Creation of urdf from step file with program `urdf_from_step <https://github.com/ReconCycle/urdf_from_step>`_ is possible by adding properly named parts representing joints coordinates systems (right) to the robot shape CAD file (left). The addition of joint definitions is possible in any CAD software. Definitions can be added to the robot shape in CAD program-specific native format or to the robot shape already in step file format. For this example, we used Fusion 360 as a CAD program.
 
 
 .. image:: figures_creating_step/robot_arm_cad.PNG

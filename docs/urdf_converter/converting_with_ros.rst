@@ -1,6 +1,3 @@
-
-
-
 Working principle
 ===============
 
