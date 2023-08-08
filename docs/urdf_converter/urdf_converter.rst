@@ -56,9 +56,8 @@ References
    :maxdepth: 2
 
    instalation
-   converting_with_ros
    creating_step_file
-   examples
+   converting_with_ros
    devel_guide
 
    
