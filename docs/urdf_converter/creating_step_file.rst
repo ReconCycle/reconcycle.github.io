@@ -42,10 +42,11 @@ The coordinate system of the subpart represents the joint coordinate system in u
 The shape in the joint subassembly is saved to the STEP file but it is later ignored in the urdf creation, so any user may choose his own desired shapes inside of joints definitions. Because the Fusion 360 doesn't want to save the part with no shape to the STEP file we added the ball shape to the part representing the joint type. 
 
 
-.. image:: figures_creating_step/joint_cad_definition.PNG
-   :width: 400x
 .. image:: figures_creating_step/tree_shapes.PNG
    :width: 350px
+
+.. image:: figures_creating_step/joint_cad_definition.PNG
+   :width: 700px
 
 We created one CAD joint definition that we mated as an independent copy for all our joint definitions. For each copy, we changed the subassembly name to the required link names that it was connecting and we changed the internal part name to the joint type that it was representing. 
 
