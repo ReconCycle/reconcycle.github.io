@@ -65,6 +65,7 @@ This is done with proper naming of subassemblies or parts, with template naming 
 ..
    Colors..
 
+..
 
-.. image:: figures_creating_step/tree_shapes.PNG
+   image:: figures_creating_step/tree_shapes.PNG
    :width: 350px
