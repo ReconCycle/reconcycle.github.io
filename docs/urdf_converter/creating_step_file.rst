@@ -51,14 +51,9 @@ We created one CAD joint definition that we mated as an independent copy for all
 Link shapes definitions
 -----------------
 
-Kinematic links for urdf are automatically created from the joint element relations. 
-Using the 'definition' link element, we connect different parts of our initial robot CAD shape to corespoding links.
+Kinematic links for urdf are automatically created from the joint element relations. Using the 'definition' link element, we connect different parts of our initial robot CAD shape to corespoding links.
 
-This is done with proper naming of subassemblies or parts, with template naming convection "link_LINKNAME_*", where "link_" is
- the definition identifier and "LINKNAME" is connecting specific shapes to the links. All "LINKNAME" must have a pair in the urdf definition "CHILD". A kinematic link that "CHILD" does not have any "link_CHILD" counterpart
-  is also possible, it will have only kinematic definition and no geometric shapes.
-
-The shapes that are not hierarchical in any "link_" definition are automatically added to the URDF base link.
+This is done with proper naming of subassemblies or parts, with template naming convection "link_LINKNAME_*", where "link_" is the definition identifier and "LINKNAME" is connecting specific shapes to the links. The definition element can be at any level of the CAD tree hierarchy, as long as it is not inside another definition assembly. All "LINKNAME" must have a pair in the urdf definition "CHILD". A kinematic link that "CHILD" does not have any "link_CHILD" counterpart  is also possible, it will have only kinematic definition and no geometric shapes. The shapes that are not hierarchical in any "link_" definition are automatically added to the URDF base link.
 
 .. image:: figures_creating_step/tree_shapes.PNG
    :width: 350px
