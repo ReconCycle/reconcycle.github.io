@@ -19,4 +19,6 @@ Push builded docker image:
 
 .. code-block:: bash
     
+    docker build -t ghcr.io/reconcycle/urdf-from-step:latest .
+
     docker image push ghcr.io/reconcycle/urdf-from-step:latest

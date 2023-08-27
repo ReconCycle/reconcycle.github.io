@@ -24,6 +24,19 @@ The created package needs to be added to the catkin workspace for building, sour
 Run with docker
 -----------
 
+
+
+First pull the builded docker
+
+.. code-block:: bash
+
+    docker pull ghcr.io/reconcycle/urdf-from-step:latest
+
+
+Prepare two folders, first with step file, second for created urdf package. For example we gona take step of simple robot arm: this
+
+
+
 .. code-block:: bash
 
     roslaunch urdf_from_step build_urdf_from_step.launch step_file_path:="/input_step_files/robot_arm.step" urdf_package_name:="robot_arm"
