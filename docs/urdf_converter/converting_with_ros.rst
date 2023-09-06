@@ -38,11 +38,11 @@ The prepared step file is converted to the corresponding ROS package containing 
  
 It is normal for the node to die after execution: REQUIRED process [urdf_creator-2] has died! process has finished cleanly
 
+
 Run created package
 ----------------------
 
-The created package needs to be added to the catkin workspace for building, sourcing, and launching:
-
+To run the created package, you can use an existing catkin workspace or create a new one. The built package must be copied to the src folder in the Docker mount output folder. Once built and sourced, the package can be run:
 
 .. code-block:: bash
 
@@ -54,7 +54,10 @@ The created package needs to be added to the catkin workspace for building, sour
     roslaunch robot_arm load_urdf.launch
 
 
-Gui for joint state publisher starts up
+On startup, the joint state publisher GUI is displayed:
+
+.. image:: figures_rviz/joint_gui.png
+   :width: 350px
 
 Visualization
 -----------
