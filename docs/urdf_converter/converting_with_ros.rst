@@ -1,4 +1,4 @@
-Manual
+Conversion process manual
 ===============
 
 The conversion of a STEP file into a URDF package is demonstrated using a simple `robot arm <https://github.com/ReconCycle/urdf-from-step-examples/tree/main/examples/robot_arm/input_step_files>`_ and Docker.
@@ -63,9 +63,30 @@ Visualization
 -----------
 
 Run ros visualization tool:
+
 .. code-block:: bash
 
     rviz
 
+atrt
+
+.. image:: figures_rviz/rviz_setings.png
+   :width: 350px
+
+atrt
+
+
+.. image:: figures_rviz/rviz_tf_center.png
+   :width: 350px
+.. image:: figures_rviz/rviz_tf_moved.png
+   :width: 350px
+
+
+adgag
+
+.. image:: figures_rviz/rviz_zero_position.png
+   :width: 350px
+.. image:: figures_rviz/rviz_moved.png
+   :width: 350px
 
 Like this:
