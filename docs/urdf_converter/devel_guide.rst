@@ -22,3 +22,7 @@ Push builded docker image:
     docker build -t ghcr.io/reconcycle/urdf-from-step:latest .
 
     docker image push ghcr.io/reconcycle/urdf-from-step:latest
+
+
+
+    docker run -it  -v ~/input_step_files:/input_step_files -v ~/output_ros_urdf_packages:/output_ros_urdf_packages  ghcr.io/reconcycle/urdf-from-step:latest roslaunch urdf_from_step build_urdf_from_step.launch step_file_path:="/input_step_files/robot_arm.step" urdf_package_name:="robot_arm"
