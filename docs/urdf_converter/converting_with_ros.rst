@@ -1,32 +1,27 @@
 Manual
 ===============
 
-Conversion of STEP file to URDF package will be demonstrated on the example of simple robotic arm [] and using docker image.
+The conversion of a STEP file into a URDF package is demonstrated using a simple `robot arm <https://github.com/ReconCycle/urdf-from-step-examples/tree/main/examples/robot_arm/input_step_files>`_ and Docker.
 
-
-Envirotment praparation
+Environment preparation
 -----------
 
 
-First we need to download the builded docker:
+First, we need to download the docker image:
 
 .. code-block:: bash
 
     docker pull ghcr.io/reconcycle/urdf-from-step:latest
 
-
-The we download the example case adn delete already solution
+Then we download the sample case, prepare two folders for later mounting with Docker and copy the sample step file into the first folder:
 
 .. code-block:: bash
 
     git clone https://github.com/ReconCycle/urdf-from-step-examples.git
-
     mkdir input_step_files
-    cp urdf-from-step-examples/examples/robot_arm/input_step_files/robot_arm.step input_step_files/
     mkdir output_ros_urdf_packages
-
-Prepare two folders, first with step file, second for created urdf package. For example we gona take step of simple robot arm: this
-
+    cp urdf-from-step-examples/examples/robot_arm/input_step_files/robot_arm.step input_step_files/
+    
 
 
 Conversion
@@ -34,21 +29,18 @@ Conversion
 
 
 
-The prepared step file is turned to the corresponding ROS package containing URDF like this:
+The prepared step file is converted to the corresponding ROS package containing URDF with the following Docker command:
 
 .. code-block:: bash
 
     docker run  -v ~/input_step_files:/input_step_files -v ~/output_ros_urdf_packages:/output_ros_urdf_packages  --rm ghcr.io/reconcycle/urdf-from-step:latest roslaunch urdf_from_step build_urdf_from_step.launch step_file_path:="/input_step_files/robot_arm.step" urdf_package_name:="robot_arm"
  
  
-Its normal tha node dies: REQUIRED process [urdf_creator-2] has died! process has finished cleanly
+It is normal for the node to die after execution: REQUIRED process [urdf_creator-2] has died! process has finished cleanly
 
-
-
-
-
-Run builed package
+Run created package
 ----------------------
+
 The created package needs to be added to the catkin workspace for building, sourcing, and launching:
 
 
@@ -61,10 +53,16 @@ The created package needs to be added to the catkin workspace for building, sour
     source devel/setup.bash
     roslaunch robot_arm load_urdf.launch
 
+
 Gui for joint state publisher starts up
 
 Visualization
 -----------
+
+Run ros visualization tool:
+.. code-block:: bash
+
+    rviz
 
 
 Like this:
