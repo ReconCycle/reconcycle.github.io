@@ -12,7 +12,18 @@ Run with development compose:
 .. code-block:: bash
 
     docker run urdf-from-step:latest .......
-    docker run -it -v /home/rok/catkin_ws/src/urdf_from_step:/ros_ws/src/urdf_from_step -v /home/rok/Documents/urdf-from-step-examples/examples/robot_arm/input_step_files:/input_step_files -v /home/rok/Documents/urdf-from-step-examples/examples/robot_arm/output_ros_urdf_packages:/output_ros_urdf_packages urdf-from-step:latest
+    docker run -it -v ~/urdf_from_step:/ros_ws/src/urdf_from_step -v ~/input_step_files:/input_step_files -v ~/output_ros_urdf_packages:/output_ros_urdf_packages ghcr.io/reconcycle/urdf-from-step:latest
+
+rename step to test.step
+
+Inside docker
+
+.. code-block:: bash
+    catkin build urdf_from_step
+
+sudo rm -r test_package/
+
+
 
 
 Push builded docker image:
