@@ -68,12 +68,14 @@ Run ros visualization tool:
 
     rviz
 
-atrt
+
+
 
 .. image:: figures_rviz/rviz_setings.png
    :width: 350px
 
-atrt
+
+
 
 
 .. image:: figures_rviz/rviz_tf_center.png
@@ -82,7 +84,7 @@ atrt
    :width: 350px
 
 
-adgag
+
 
 .. image:: figures_rviz/rviz_zero_position.png
    :width: 350px
