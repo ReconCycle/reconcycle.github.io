@@ -8,7 +8,7 @@ Because of the challenging installation of the required python package `pythonOC
 Docker
 ------
 
-Docker repository source is available `hier <https://github.com/ReconCycle/urdf-from-step-docker>`_ and can be build localy:
+The Docker repository source is available `here <https://github.com/ReconCycle/urdf-from-step-docker>`_ and can be built locally:
 
 .. code-block:: bash
 
@@ -18,7 +18,7 @@ Docker repository source is available `hier <https://github.com/ReconCycle/urdf-
 
 
 
-Builded docker image is available `hier <https://github.com/ReconCycle/urdf-from-step-docker/pkgs/container/urdf-from-step>`_, and can be directly pulled like this:  
+Build docker image is available `here <https://github.com/ReconCycle/urdf-from-step-docker/pkgs/container/urdf-from-step>`_, and can be directly pulled like this:  
 
 .. code-block:: bash
 

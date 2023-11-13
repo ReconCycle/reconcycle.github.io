@@ -69,7 +69,7 @@ Run ros visualization tool:
     rviz
 
 
-
+Setup rviz visulaization settings:
 
 .. image:: figures_rviz/rviz_setings.png
    :width: 350px
@@ -91,4 +91,3 @@ Run ros visualization tool:
 .. image:: figures_rviz/rviz_moved.png
    :width: 350px
 
-Like this:
