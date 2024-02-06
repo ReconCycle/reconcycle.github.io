@@ -1,10 +1,10 @@
 Conversion process manual
-===============
+=========================
 
 The conversion of a STEP file into a URDF package is demonstrated using a simple `robot arm <https://github.com/ReconCycle/urdf-from-step-examples/tree/main/examples/robot_arm/input_step_files>`_ and Docker.
 
 Environment preparation
------------
+-----------------------
 
 
 First, we need to download the docker image:
@@ -46,7 +46,7 @@ To run the created package, you can use an existing catkin workspace or create a
 
 .. code-block:: bash
 
-    mkdir -p ~/ros_ws/src 
+    mkdir -p ~/ros_ws/src
     cp -r ~/output_ros_urdf_packages/robot_arm ~/ros_ws/src/robot_arm
     cd ros_ws
     catkin build robot_arm
@@ -60,7 +60,7 @@ On startup, the joint state publisher GUI is displayed:
    :width: 350px
 
 Visualization
------------
+-------------
 
 Run ros visualization tool:
 
@@ -71,7 +71,7 @@ Run ros visualization tool:
 
 Setup rviz visulaization settings:
 
-.. image:: figures_rviz/rviz_setings.png
+.. image:: figures_rviz/rviz_settings.png
    :width: 350px
 
 

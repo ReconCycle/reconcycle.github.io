@@ -16,7 +16,7 @@ Welcome to ReconCycle project documentation!
    :caption: Manuals
 
    user_guide/index
-   developer_guide
+   developer_guide/index
    tutorials/tutorials
 
 .. toctree::
@@ -66,4 +66,4 @@ Funding
    :width: 100px
    :align: left
 
-This project has received funding from the European Union's `Horizon 2020 research and innovation programme under grant agreement No. 871352 <https://cordis.europa.eu/project/id/871352>`_. 
+This project has received funding from the European Union's `Horizon 2020 research and innovation programme under grant agreement No. 871352 <https://cordis.europa.eu/project/id/871352>`_.
