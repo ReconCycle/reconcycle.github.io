@@ -21,6 +21,7 @@ extensions = [
     'sphinx_design',
     'sphinx_copybutton',
     'sphinx.ext.extlinks',
+    'myst_parser', # added by Seb for markdown support
 ]
 
 intersphinx_mapping = {
