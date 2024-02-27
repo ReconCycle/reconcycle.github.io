@@ -12,3 +12,13 @@ full functionality.
 
 .. image:: figures_module/Archetypical_module_2.jpg
    :width: 700px
+
+
+.. toctree::
+   :maxdepth: 2
+   
+   archetypical_modue
+   franka_robot
+   soft_actuators
+   peripherals
+   cnc
