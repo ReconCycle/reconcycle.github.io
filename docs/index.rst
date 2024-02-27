@@ -7,7 +7,7 @@ Welcome to ReconCycle project documentation!
    :hidden:
    :caption: Overview
 
-   robotic_platforms/robotic_platforms
+   hardware/overview
    software_architecture/overview
 
 .. toctree::
