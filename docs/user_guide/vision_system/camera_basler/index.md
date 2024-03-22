@@ -2,12 +2,22 @@
 
 ros-basler: Docker [pylon-ROS-camera](https://github.com/basler/pylon-ros-camera)
 
-Basler provides an official [pylon ROS driver](https://github.com/basler/pylon-ros-camera) for Basler GigE Vision and USB3 Vision cameras. This project provides a docker wrapper for it.
+Basler provides an official [pylon ROS driver](https://github.com/basler/pylon-ros-camera) for Basler GigE Vision and USB3 Vision cameras. This project provides a docker wrapper for it with the extra addition of:
+```bash
+pylon_colour_camera_node.launch
+``` 
+that creates a colour node when using `yuv422` image encoding.https://github.com/ReconCycle/ros-basler/tree/main
 
-Extras:
-- `pylon_colour_camera_node.launch` that creates a colour node when using `yuv422` image encoding.
+**For this installation you will require [Docker](https://docs.docker.com/engine/install/ubuntu/) and [docker compose](https://docs.docker.com/compose/install/linux/#install-using-the-repository)** (click the links for instalation instructions)
 
 ## Getting Started
+
+First you need to clone [this repository](https://github.com/ReconCycle/ros-basler/tree/main) into your work directory with:
+
+```bash
+git clone https://github.com/ReconCycle/ros-basler.git
+```
+Navigate into the newly created 'ros-basler' directory
 
 Run the container with:
 ```bash
@@ -30,16 +40,20 @@ In UserSet2 specify the following:
 
 ## Camera Calibration
 
-The [pylon ROS driver](https://github.com/basler/pylon-ros-camera) can accept a camera calibration file.
+The [pylon ROS driver](https://github.com/basler/pylon-ros-camera) can accept a camera calibration file containing the intrinsic parameters.
 
-**VERY IMPORTANT** Run `xhost +` on the client in order to see the GUI.
+**VERY IMPORTANT** Before the next command, run `xhost +` on the client in order to be able to see the GUI.
 
 Access the container with:
 ```bash
 docker exec -it ros-basler bash
 ```
 
-1. To run the calibration on a 10x7 checkerboard with 20.1mm squares:
+1. To run the calibration you will need a calibration checkerboard, you will need to specify the checkerboard parameters:
+ - number of squares (width X height)
+ - dimensions of the squares in metres (example: 20,1 mm is 0,0201 m)
+
+To run the calibration on a 10x7 checkerboard with 20.1mm squares: 
 ```bash
 rosrun camera_calibration cameracalibrator.py --size 10x7 --square 0.0201 image:=/basler/image_color camera:=/basler
 ```
@@ -47,22 +61,36 @@ rosrun camera_calibration cameracalibrator.py --size 10x7 --square 0.0201 image:
 
 2. Save the calibration and copy the yaml file from the calibrationdata.tgz
 
-3. paste the calibration in `config/`
+3. paste the calibration in `ros-basler/config/`
 
-4. In `config/colour_camera.yaml` point it to the calibration file.
+4. In `config/colour_camera.yaml` point it to the calibration file by adding the absolute path to the file to the `camera_info_url:` line, like in this example:
+```yaml
+camera_info_url: "file:///root/catkin_ws/src/pylon-ros-camera/pylon_camera/config/calibration_2900x2900_goe.yaml"
+```
 
 ## Extra
 
-To save an image to file, run:
+To save an image to a file, run:
 ```bash
 rosrun image_view image_saver image:=/basler/image_color
 ```
+This will save the latest image message on the listed topic as an image file in the curent directory
 
 
 
 ## Debugging
 
-Comment out the `command: ...` line.
+For debugging the docker container we don't want the camera node to launch, to prevent thet from happending we need to comment out the `command:` line in the  `docker-compose.yml` file:
+```yaml
+    network_mode: host # workaround to use the camera
+    restart: "no"
+    volumes:
+      - config:/root/catkin_ws/src/pylon-ros-camera/pylon_camera/config
+      - launch:/root/catkin_ws/src/pylon-ros-camera/pylon_camera/launch
+      - /tmp/.X11-unix:/tmp/.X11-unix # for using local xserver
+--> command: bash -c "(sleep 5 && rosservice call /basler/set_sleeping True) & roslaunch pylon_camera pylon_colour_camera_node.launch"
+    privileged: true
+```
 
 Enter the container with:
 ```bash
