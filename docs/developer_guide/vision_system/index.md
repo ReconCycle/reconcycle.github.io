@@ -2,6 +2,57 @@
 
 TODO: Training the Vision System
 
+# Dataset creation guide
+
+This guide leverages the use of the [labelme](https://github.com/labelmeai/labelme) graphical image annotation tool
+
+## 1. Labelme installation
+Fore more detailed instructions or other installation methods, refer to the [official instalation guide](https://github.com/labelmeai/labelme?tab=readme-ov-file#installation)
+
+### Anaconda
+
+```bash
+# python3
+conda create --name=labelme python=3
+source activate labelme
+# conda install -c conda-forge pyside2
+# conda install pyqt
+# pip install pyqt5  # pyqt5 can be installed via pip on python3
+pip install labelme
+# or you can install everything by conda command
+# conda install labelme -c conda-forge
+```
+
+### Ubuntu
+
+```bash
+sudo apt-get install labelme
+
+# or
+sudo pip3 install labelme
+
+# or install standalone executable from:
+# https://github.com/wkentaro/labelme/releases
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Dataset Creation and Training
 
