@@ -4,7 +4,7 @@ Workcell Installation Manual
 Overview of Docker images
 ---------------
 
-The ReconCycle workcell components are implemented within a set of Docker images containing key components, which facilitates quick setup & deployment. The [reconcycle-dockers](https://github.com/ReconCycle/reconcycle_dockers) repository contains the information required to build Docker images (using Dockerfiles), and run/instantiate them to create Docker containers (using Compose files). We can divide the 
+The ReconCycle workcell components are implemented within a set of Docker images containing key components, which facilitates quick setup & deployment. The [reconcycle dockers](https://github.com/ReconCycle/reconcycle_dockers) repository contains the information required to build Docker images (using Dockerfiles), and run/instantiate them to create Docker containers (using Compose files). We can divide the 
 
 A brief description of Docker images and their functionality:
 
