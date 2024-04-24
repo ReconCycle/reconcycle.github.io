@@ -2,7 +2,7 @@
 
 ## Overview of Docker images
 
-The ReconCycle workcell components are implemented within a set of Docker images containing key components, which facilitates quick setup & deployment. The [reconcycle dockers](http://github.com/ReconCycle/reconcycle_dockers) repository contains the information required to build Docker images (using Dockerfiles), and run/instantiate them to create Docker containers (using Compose files). We can divide the 
+The ReconCycle workcell components are implemented within a set of Docker images containing key components, which facilitates quick setup & deployment. The [reconcycle dockers](http://github.com/ReconCycle/reconcycle_dockers) repository contains the information required to build Docker images (using Dockerfiles), and run/instantiate them to create Docker containers (using Compose files).
 
 A brief description of Docker images and their functionality:
 
@@ -50,11 +50,6 @@ To run the Docker images/containers, Docker must be installed as per [instructio
 
 For computers running the Vision system, using a modern nvidia graphics card is required (nvidia 1080Ti or better) to speed up the processing of images. The [CUDA toolkit](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html) must be installed as per instructions.
 
-For computers running robot controllers, it 
+For computers running robot controllers, it is necessary to apply a real-time kernel patch.
 
 ## Building Docker images
-
-    workcell_visualization/index
-    flexbe/index
-    vision_pipeline/index
-    robot_controllers/index
