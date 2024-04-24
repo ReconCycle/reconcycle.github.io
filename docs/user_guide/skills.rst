@@ -1,2 +1,0 @@
-Robot Skill Library Manual
-==========================
