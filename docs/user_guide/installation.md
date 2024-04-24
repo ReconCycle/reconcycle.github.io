@@ -1,10 +1,6 @@
-Workcell Installation Manual
-============================
+# Workcell Installation Manual
 
-Overview of Docker images
----------------
-
-[Version 6 of `qbdevice-api` package](https://bitbucket.org/qbrobotics/qbdevice-api-6.x.x/src/production/)
+## Overview of Docker images
 
 The ReconCycle workcell components are implemented within a set of Docker images containing key components, which facilitates quick setup & deployment. The [reconcycle dockers](http://github.com/ReconCycle/reconcycle_dockers) repository contains the information required to build Docker images (using Dockerfiles), and run/instantiate them to create Docker containers (using Compose files). We can divide the 
 
@@ -17,22 +13,21 @@ A brief description of Docker images and their functionality:
 5. reconcycle-moveit - runs the MoveIt ROS package to enable motion planning
 6. qb-vsa - runs the software for controlling qbRobotic Variable Stiffness Gripper
 
-Vision system:
+### Vision system:
 
 1. ros-basler - enables interfacing Basler camera with ROS network
 2. ros-realsense - enables interfacing Realsense camera(s) with ROS network
 
-Robot control:
+### Robot control:
 
 1. reconcycle-controller - contains the JointImpedance and CartesianImpedance controllers for the Franka Emika Panda robots
 
-Peripheral devices (CNC machine and Raspberry PIs within the modular tables):
+### Peripheral devices (CNC machine and Raspberry PIs within the modular tables):
 
 1. reconcycle-cnc - enables controlling the CNC machine over ROS
 2. reconcycle-raspi - enables controlling (pneumatic) valves within the workcell tables and on the robots, using a Raspberry PI's GPIO pins
 
-Overview of ReconCycle packages
----------------
+## Overview of ReconCycle packages
 
 In general, ReconCycle components can also be run outside of a Docker container, however in this case dependency management is more difficult.
 A brief description of packages and their purpose:
@@ -47,8 +42,7 @@ A brief description of packages and their purpose:
 7. [cnc_manager](https://github.com/ReconCycle/cnc_manager) - enables control of the CNC mill over ROS
 8. [workcell_lifecycle_manager](https://github.com/ReconCycle/workcell_lifecycle_manager) - utilities to start and stop the entire workcell and the components
 
-Installation Prerequisites
----------------
+## Installation Prerequisites
 
 Using a Linux-based operating system (distribution) is recommended. For example, [Ubuntu](https://ubuntu.com/) can be used as it's known to be a user-friendly and well-supported distribution. We recommend using a Long-term Support (LTS) release, so key security updates will be available for several years to come.
 
@@ -58,12 +52,8 @@ For computers running the Vision system, using a modern nvidia graphics card is 
 
 For computers running robot controllers, it 
 
-Building Docker images
----------------
+## Building Docker images
 
-
-
-.. toctree::
     workcell_visualization/index
     flexbe/index
     vision_pipeline/index
