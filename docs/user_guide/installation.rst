@@ -4,7 +4,7 @@ Workcell Installation Manual
 Overview of Docker images
 ---------------
 
-The ReconCycle workcell components are implemented within a set of Docker images containing key components, which facilitates quick setup & deployment. The [reconcycle dockers](https://github.com/ReconCycle/reconcycle_dockers) repository contains the information required to build Docker images (using Dockerfiles), and run/instantiate them to create Docker containers (using Compose files). We can divide the 
+The ReconCycle workcell components are implemented within a set of Docker images containing key components, which facilitates quick setup & deployment. The [reconcycle dockers](http://github.com/ReconCycle/reconcycle_dockers) repository contains the information required to build Docker images (using Dockerfiles), and run/instantiate them to create Docker containers (using Compose files). We can divide the 
 
 A brief description of Docker images and their functionality:
 
@@ -26,9 +26,8 @@ Robot control:
 
 Peripheral devices (CNC machine and Raspberry PIs within the modular tables):
 
-1. reconcycle-cnc
-2. reconcycle-raspi
-
+1. reconcycle-cnc - enables controlling the CNC machine over ROS
+2. reconcycle-raspi - enables controlling (pneumatic) valves within the workcell tables and on the robots, using a Raspberry PI's GPIO pins
 
 Overview of ReconCycle packages
 ---------------
@@ -48,6 +47,7 @@ A brief description of packages and their purpose:
 
 Installation Prerequisites
 ---------------
+
 Using a Linux-based operating system (distribution) is recommended. For example, [Ubuntu](https://ubuntu.com/) can be used as it's known to be a user-friendly and well-supported distribution. We recommend using a Long-term Support (LTS) release, so key security updates will be available for several years to come.
 
 To run the Docker images/containers, Docker must be installed as per [instructions](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository). Installation using the APT repository is recommended.
