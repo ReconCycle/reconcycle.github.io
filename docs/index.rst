@@ -53,7 +53,7 @@ Links
 =====
 
 - `Project website <https://reconcycle.eu>`_
-- `GitHub repositories <https://github.vom/reconcycle>`_
+- `GitHub repositories <https://github.com/reconcycle>`_
 - `Youtube channel <https://youtube.com/@reconcycle>`_
 - `Follow us at LinkedIn <https://www.linkedin.com/company/reconcycle>`_
 - `Internal Nextcloud repository <https://cloud.reconcycle.eu>`_
