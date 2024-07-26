@@ -24,6 +24,12 @@ extensions = [
     'myst_parser', # added by Seb for markdown support
 ]
 
+myst_enable_extensions = [
+    "amsmath",
+    "html_image",
+    "attrs_inline",
+]
+
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
     'sphinx': ('https://www.sphinx-doc.org/en/master/', None),

@@ -1,3 +1,0 @@
-### Franka Emika robots
-
-TODO
