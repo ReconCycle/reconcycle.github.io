@@ -25,6 +25,7 @@ Welcome to ReconCycle project documentation!
    :caption: Standalone tools
 
    urdf_converter/urdf_converter
+   gpio/raspi_ros
 
 .. meta::
    :description lang=en: Documentation for the software and hardware developed within the ReconCycle project.
@@ -35,10 +36,6 @@ Welcome to ReconCycle project documentation!
    :align: right
 
 ReconCycle aims to substantially reduce human effort and increase the accuracy and efficiency of recycling. As ReconCycle uses highly compliant robots, humans will be able to operate together with the machines to complete the missing steps. This reduces automation complexity further and brings this project into a feasible regime.
-
-.. note::
-
-   This project is under active development.
 
 
 References

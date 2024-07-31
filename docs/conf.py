@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Reconcycle'
-copyright = '2023, Reconcycle.eu'
-author = 'Reconcycle'
+project = 'ReconCycle'
+copyright = '2020-2024, ReconCycle project'
+author = 'ReconCycle'
 
-release = '0.1'
-version = '0.1.0'
+#release = '1.0'
+#version = '1.0.0'
 
 # -- General configuration
 
