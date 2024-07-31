@@ -4,7 +4,7 @@ Docker container that offers GPU support and a configured python environment for
 
 ![RViz](./readme_rviz.png)
 
-
+<!-- TODO add user guides, method overviews etc.-->
 ## Installation
 
 1. `git clone git@github.com:ReconCycle/vision-pipeline.git`
