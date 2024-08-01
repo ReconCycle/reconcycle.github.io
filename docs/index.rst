@@ -17,26 +17,26 @@ Welcome to ReconCycle project documentation!
 
    user_guide/index
    developer_guide/index
-   tutorials/tutorials
+   tutorials/index
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: Standalone tools
 
-   urdf_converter/urdf_converter
-   gpio/raspi_ros
+   standalone/urdf_converter/urdf_converter
+   standalone/gpio/raspi_ros
+   standalone/kinesthetic/index
 
 .. meta::
    :description lang=en: Documentation for the software and hardware developed within the ReconCycle project.
 
 
-.. .. image:: figures_main_page/jsi-logo-1-150x150.png
-   :width: 100px
-   :align: right
-
 ReconCycle aims to substantially reduce human effort and increase the accuracy and efficiency of recycling. As ReconCycle uses highly compliant robots, humans will be able to operate together with the machines to complete the missing steps. This reduces automation complexity further and brings this project into a feasible regime.
 
+Documentation is organized as follows. The *Overview* section highlights key components, including the physical aspects of the system and the modular software architecture, which describes the flexible and scalable software framework supporting the project.
+The *Manuals* section includes detailed user guides on hardware setup, the simulation system, the robot skill library, and the vision system. It also provides developer documentation for implementing new robotic skills and visual routines, along with example programs and tutorials for programming new disassembly tasks.
+The section on *Standalone tools* describes standalone applications and scripts designed to support the implementation of common tasks within the ReconCycle ecosystem. These tools aim to improve the overall efficiency of programming the system. They include tools to create URDF models from CAD files in STEP format, and Raspberry GPIO configuration utilities, among others.
 
 References
 ==========
@@ -59,7 +59,7 @@ Links
 Funding
 =======
 
-.. image:: figures_main_page/rosin_eu_flag.jpg
+.. image:: figures/main/rosin_eu_flag.jpg
    :width: 100px
    :align: left
 

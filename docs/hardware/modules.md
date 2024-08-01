@@ -2,7 +2,7 @@
 
 #### Robot module
 
-<img src="./figures_module/franka_module-nobg.png" width="300">
+<img src="/figures/modules/franka_module-nobg.png" width="300">
 
 The robot module includes:
 - **Franka Emika Robot arm:**. The collaborative arm features 7 DOF with torque sensors at each joint, pose repeatability of +/- 0.1 mm and negligible path deviation even at high velocities. It's maximum payload is 3 kg, the maximum reach is 855 mm and the workspace coverage is 94.5%.
@@ -17,7 +17,7 @@ The computer included in the module is running FCI, an interface allowing for lo
 
 #### Vise Module
 
-<img src="./figures_module/vise_module.png" width="300">
+<img src="/figures/modules/vise_module.png" width="300">
 
 The overall design of the vise was made with adaptability to different workpieces in mind. Externally, the vise is a simple housing with four sliding jaws. Internally, a system of linear guides and actuators, along with the control system located in the module's drawer, ensures that one face of the workpiece is repeatably in the same position in the vise.
 
@@ -37,7 +37,7 @@ Attached to the pneumatic cylinder is a hardened steel blade capable of cutting 
 
 #### CNC Module
 
-<img src="./figures_module/cnc_module.png" width="300">
+<img src="/figures/modules/cnc_module.png" width="300">
 
 The CNC module is used for smoke-detector disassembly, due to the wide variety of different smoke detectors that have to be processed, this was the most robust solution. The module contains:
 

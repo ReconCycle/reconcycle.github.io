@@ -41,7 +41,7 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_static_path = ['_static']
-html_logo = "figures_main_page/reconcycle-transparent.png"
+html_logo = "figures/main/reconcycle-transparent.png"
 #html_theme = 'sphinx_rtd_theme'
 #html_theme_options = {
 #    'logo_only': True,

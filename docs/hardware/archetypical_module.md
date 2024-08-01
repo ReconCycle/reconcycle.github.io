@@ -2,7 +2,7 @@
 
 Each module consists of a steel frame that provides rigidity and structural integrity. The frame includes an aluminium work surface, which provides a simple, flexible mounting solution for module-specific equipment. Additionally, the frame is mounted on castors to enable  convenient transportation of the module.
 
-<img src="figures_module/module_render.png"/>
+<img src="/figures/modules/module_render.png"/>
 
 #### Electrical and network Connectivity
 Within the module, basic electrical wiring distributes power to the module’s electronic components, such as network switches, pneumatic solenoid valve blocks, single-board computers etc. The module also includes network wiring, connecting the devices within the module (computers, cameras, robotic controllers, etc.) and interconnects various modules within the cell’s network via "Plug & Produce" (PnP) connectors.

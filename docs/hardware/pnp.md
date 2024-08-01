@@ -3,7 +3,7 @@
 
 The PnP connector has a universal shape, eliminating the need for male and female variants. This design significantly enhances flexibility and ease of use. The connector features a single-piece CNC-machined aluminum body, providing rigidity and housing all other components. Centering pins and bushings ensure proper alignment of the connector pair before final coupling.
 
-![PNP section](figures_module/pnp_section.png)
+![PNP section](/figures/modules/pnp_section.png)
 
 Custom zero-point clamping units achieve the final mechanical coupling, ensuring a secure and repeatable connection. The zero-point system does not require any unlocking action before coupling. The connectors snap together with a simple push, without the need for additional control or actuation.
 
