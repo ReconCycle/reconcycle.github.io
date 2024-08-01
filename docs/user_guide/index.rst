@@ -7,7 +7,7 @@ This part contains user manuals for setting up the workcell, guides for basic ha
    :maxdepth: 2
    
    installation/index
-   simulation
+   robot
    flexbe/states
    vision_system/index
    skills
