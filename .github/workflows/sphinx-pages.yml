@@ -9,6 +9,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+      - name: 🗑 Delete deployment
+        uses: strumwolf/delete-deployment-environment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true
+
   pages:
     runs-on: ubuntu-20.04
     environment:
@@ -20,3 +32,5 @@ jobs:
     steps:
     - id: deployment
       uses: sphinx-notes/pages@v3
+
+    needs: cleanup
