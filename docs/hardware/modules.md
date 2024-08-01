@@ -1,4 +1,4 @@
-### Module overview
+### Overview of modules
 
 #### Robot module
 
