@@ -6,6 +6,7 @@ Developer guide
     
     skills/index
     utils/index
+    kinesthetic/index
     vision_system/index
 
 Manuals for training the vision system.

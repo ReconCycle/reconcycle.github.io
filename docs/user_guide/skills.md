@@ -2,7 +2,7 @@
 
 ## Overview
 
-Commonly used robot (or peripheral machine) operations/[skills](https://github.com/ReconCycle/disassembly_toolkit/tree/main/disassembly_pipeline/skills) are encapsulated within Skill classes, so they can be easily used either stand-alone or within a FlexBe behavior. An [abstract base skill](https://github.com/ReconCycle/disassembly_toolkit/blob/main/disassembly_pipeline/skills/base_skill.py) is also defined.
+Commonly used robot (or peripheral machine) operations/[skills](https://github.com/ReconCycle/disassembly_toolkit/tree/main/disassembly_pipeline/skills) are encapsulated within Skill classes, so they can be easily used either stand-alone or within a FlexBe state. An [abstract base skill](https://github.com/ReconCycle/disassembly_toolkit/blob/main/disassembly_pipeline/skills/base_skill.py) is also defined.
 
 Common guidelines for developing skills are:
 

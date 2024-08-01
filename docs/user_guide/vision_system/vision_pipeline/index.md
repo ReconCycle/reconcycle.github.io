@@ -1,5 +1,7 @@
 # Vision Pipeline
 
+Vision pipeline utilizes information obtained through camera sensors to select the appropriate action during the disassembly process.
+
 Docker container that offers GPU support and a configured python environment for [vision-pipeline](https://github.com/ReconCycle/vision-pipeline) and [action-predictor](https://github.com/ReconCycle/action_predictor).
 
 ![RViz](./readme_rviz.png)

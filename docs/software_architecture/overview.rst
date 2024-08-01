@@ -21,6 +21,17 @@ Development of new robot skills
 Task-level programming
 ----------------------
 
+Due to a well-developed graphical user interface, FlexBE framework has been employed in the ReconCycle project to facilitate the creation of complex robot behaviors for disassembly tasks without manual coding. This section provides an overview of FlexBE states and behaviors. Each state represents a specific action or step in a robot’s behavior. Behaviors in the FlexBE frame-work are essentially state machines, meaning that behaviors are constructed by connecting individual states through transitions.
+
+We have prepared corresponding FlexBE states for executing robot trajectories, controlling peripheral machinery, manipulating process data, etc., including:
+
+- executing robot motions (in Cartesian or joint space),
+- reading from and writing to the skill library (e.g., storing data acquired by kinesthetic teaching and initializing desired robot movements),
+- triggering functionalities on peripheral devices (e.g., moving pneumatic grippers, vise, cutter) and operating the CNC milling machine,
+- performing tool-changing process,
+- obtaining results from the vision processing pipeline, including semantic scene analysis and action prediction.
+
+
 Helping tools
 --------------------------
 
