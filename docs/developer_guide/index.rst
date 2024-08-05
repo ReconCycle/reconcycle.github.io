@@ -10,7 +10,7 @@ It also contains API documentation for the skill library and disassembly toolkit
 .. toctree::
     :maxdepth: 2
     
-    skills/index
+    skills/skills
     utils/index
     robot_module
     vision_system/index

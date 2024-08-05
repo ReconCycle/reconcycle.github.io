@@ -8,7 +8,7 @@ This part contains user manuals for setting up the workcell, guides for basic ha
    
    installation/index
    robot
-   flexbe/states
+   flexbe/flexbe_states
    vision_system_overview/index
    vision_system_installation/index
    vision_system_technical/index
