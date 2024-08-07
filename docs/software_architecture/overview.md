@@ -65,9 +65,6 @@ To ease configuration management, we developed a ROS package with a user-friendl
 - [Configuration Management Client Documentation](link_to_document)
 - [Docker Container Setup Documentation](link_to_document)
 
-## Development of new skills 
-
-
 ## Task-level programming
 
 Due to a well-developed graphical user interface, FlexBE framework has been employed in the ReconCycle project to facilitate the creation of complex robot behaviors for disassembly tasks without manual coding. This section provides an overview of FlexBE states and behaviors. Each state represents a specific action or step in a robot’s behavior. Behaviors in the FlexBE frame-work are essentially state machines, meaning that behaviors are constructed by connecting individual states through transitions.
@@ -80,4 +77,10 @@ We have prepared corresponding FlexBE states for executing robot trajectories, c
 - performing tool-changing process,
 - obtaining results from the vision processing pipeline, including semantic scene analysis and action prediction.
 
+## Development of new skills 
+
+New skills (robot operations, vision tasks, pneumatic control, ...) can be developed using available templates and existing skill scripts. This allows the user to tailor the workcell operation to their specific tasks and requirements. More details on skills and their development are available in the Manual section of the documentation. 
+
 ## Helping tools
+
+A number of tools that facilitate fast and simple workflow programming have been developed, including automatic URDF files generation from STEP models and a tool for kinesthetic guidance, which allows storing robot poses and motions into a database.

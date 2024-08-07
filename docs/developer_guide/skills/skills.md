@@ -4,7 +4,7 @@ State and skill development
 How to develop a new FlexBE state
 --------------------
 
-FlexBE states for custom actions can be developed by starting from the [generic state emplate](https://github.com/ReconCycle/reconcycle_flexbe/blob/main/reconcycle_flexbe_states/src/reconcycle_flexbe_states/example_state.py). 
+FlexBE states for custom actions can be developed by starting from the [generic state template](https://github.com/ReconCycle/reconcycle_flexbe/blob/main/reconcycle_flexbe_states/src/reconcycle_flexbe_states/example_state.py). 
 
 The state can be constructed by defining the intialization parameters, input and output keys, and the commands that should be executed in each class method, i.e. each phase of the state.
 
@@ -53,82 +53,110 @@ We established a spreadsheet to catalog the required input parameters for each f
 How to develop a new skill
 --------------------
 
-Skills are similar to FlexBE states, but can be used as standalone functions in Python scripts or called from within a FlexBE state. A selection of skills can be found at the [disassembly toolkit repository](https://github.com/ReconCycle/disassembly_toolkit/tree/main/disassembly_pipeline/skills). Their structure is similar to FlexBE states, but can be adapted as desired to include more functionalities.
+Skills are similar to FlexBE states, but can be used as standalone functions in Python scripts. They can also be used within a FlexBE state, where they multiple skills may be combined. A selection of skills can be found at the [disassembly toolkit repository](https://github.com/ReconCycle/disassembly_toolkit/tree/main/disassembly_pipeline/skills). Their structure is similar to FlexBE states, but can be adapted as desired to include more functionalities. Creation of new skills can be done by adapting the [base skill](https://github.com/ReconCycle/disassembly_toolkit/blob/main/disassembly_pipeline/skills/base_skill.py) according to the desired functionality.
 
-An example of a simple skill that performs waving with a robot arm is demonstrated below.
+An example of a skill that performs an action of dropping an object to a specified location is shown below.
 
 ```python
-from disassembly_pipeline.skills.base_skill import BaseSkill
+import numpy as np
+import json
+import os
+import time
+import copy
+from disassembly_pipeline.utils.tf_utils import GenericTransformListener
+from .base_skill import BaseSkill
+from robotblockset_python.transformations import *
+from unified_planning.shortcuts import *
 
-class Armwave(BaseSkill):
-    def __init__(self, name = "wave_robot_arm",
-                 description = "The robot will wave to greet guests/bystanders. Arguments: Object, agent(robot).",):
-       
+class DropObject(BaseSkill):
+    def __init__(self, robot= None, 
+                 name = "drop",
+                 using_controller = 'JointPositionTrajectory',
+                 move_above_z = 0.05,
+                 description = "Use robot to drop an object."):
+        
+        """Generic function to drop an object with whichever gripper."""
 
+        self.robot = robot
+        
         self.Name = name
+        self.using_controller = using_controller
+        self.move_above_z = move_above_z
         self.description = description
-
-    @abstractmethod
+    
+        self.tflistener = GenericTransformListener()
+        self.tf2x = self.tflistener.tf2x
+        
     def on_enter(self, **kwargs):
-        """ Function to call when first starting the skill."""
-        
-        robot = kwargs['robot']
 
-        out = demo_armwave(robot)
+        r = kwargs['robot']
 
-        return out
+        drop_location = kwargs['location']
 
-    @abstractmethod
-    def execute(self, **kwargs):
-        """ Function that GETS CALLED periodically(possibly with high freq) during skill execution. """
+        drop_tf_base_frame = drop_location.base_frame
+        drop_tf = drop_location.drop_tf
+
+        # Get drop position in robot base frame
+        T1 = x2t(self.tf2x(r.Base_link_name, drop_tf_base_frame))
+
+        drop_T = T1@drop_tf
+
+        # Keep the robot EE orientation, for now
+        r.GetState()
+        drop_T[0:3, 0:3] = x2t(r.x)[0:3, 0:3]
+
+        drop_T_above = copy.deepcopy(drop_T)
+        drop_T_above[2, -1] += self.move_above_z
+
+        # Fix for when we are using more than 2 controllers.
+        if r._control_strategy != self.using_controller:
+            r.Switch_controller(start_controller =  self.using_controller)
+
+        r.error_recovery()
+
+        if self.using_controller == 'CartesianImpedance':
+            # Set low cart stiffness for moves
+            r.SetCartesianStiff_helper(m=0.9, n=0.75)
+
+
+        r.CMove(x = t2x(drop_T), t = 3, v_max_factor = 0.4, a_max_factor = 0.4)
+        r.gripper.open(1, 10000, sleep=False, wait_for_result=False)
+
+        return 0
+
+    def execute(self):
+        0
+    def on_exit(self):
         0
 
-    @abstractmethod
-    def on_exit(self, **kwargs):
-        """ Function that gets called after the skill finishes."""
-        0
-        
-    @abstractmethod
-    def pddl_init(self, problem):
+    def pddl_init(self, problem, pddl_to_world_obj_links):
         """ Modify the PDDL problem, static means it runs when the PDDL env is initialized (add objects, predicates/fluents, operators...)."""
-        0
 
-    @abstractmethod
-    def pddl_loop(self, problem):
+        # Other needed fluents
+        holding = problem.fluent('holding')
+        ontable = problem.fluent('on_table')
+        clear = problem.fluent('clear')
+
+        robot_type = UserType('robot')
+        location_type = UserType('location')
+        physical_object_type = UserType('physical_object')
+
+        drop = InstantaneousAction('drop', robot = robot_type, loc=location_type, obj = physical_object_type)
+        robot = drop.parameter('robot')
+        loc = drop.parameter('loc')
+        obj = drop.parameter('obj')
+
+        drop.add_precondition(holding(obj, robot))
+
+        drop.add_effect(holding(obj, robot), False)
+        drop.add_effect(clear(obj), False)
+        drop.add_effect(ontable(obj, loc), True)
+
+        problem.add_action(drop)
+
+        return problem, pddl_to_world_obj_links
+
+    def pddl_loop(self, problem, pddl_to_world_obj_links):
         """ Modify the PDDL problem, dynamic means it runs in a loop (add objects, predicates/fluents)."""
-        0
-
-    
-def demo_armwave(robot, n_repetitions = 3):
-    """ """
-    ### PARAMS
-    max_vel = 3
-    max_acc = 3
-    
-    assert robot.gripper.Name == 'softhand'
-    
-    p1_q_init = (-0.043995, -0.430550, -0.409195, -1.916245, -0.226683, 1.558691, 0.353183)
-
-    p1_q1 = (0.130702, -0.795076, -0.402820, -1.999278, -0.049360, 2.756914, 0.444195)
-    p2_q2 = (0.474790, -0.761872, -0.905444, -2.005180, -0.047051, 2.928837, 0.941880)
-    p2_q3 = (0.480880, -0.810580, -0.485103, -2.139690, -1.024069, 3.103375, 0.833179) 
-    ### END PARAMS
-    
-    if robot._control_strategy == 'CartesianImpedance':
-        robot.Switch_between_cart_imp_and_joint_imp()
-    robot.error_recovery()
-    
-    robot.gripper.open()
-
-    robot.JMove(p1_q_init, t = 4)
-    robot.JMove(p1_q1, t = 2)
-    
-    for i in range(0,n_repetitions):    
-        robot.JMove(p2_q2, t = 1, max_vel = max_vel, max_acc = max_acc)
-        #robot.JMove(p1_q1, t = 2)
-        robot.JMove(p2_q3, t = 1, max_vel = max_vel, max_acc = max_acc)
-
-    robot.JMove(p1_q1, t = 2)
-
-    robot.JMove(p1_q_init, t = 4)
+        return problem, pddl_to_world_obj_links
 ```
