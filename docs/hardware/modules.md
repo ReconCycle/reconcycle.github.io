@@ -26,6 +26,7 @@ The system does not use encoders. Instead, simple directional pneumatic 5/3 valv
 #### Cutter Module 
 
 <img src="/figures/modules/cutter_module.png" width="300">
+
 <!--not finished yet-->
 
 The cutter module is a critical component of the ReconCycle workcell, designed to remove batteries from the heat cost allocator PCB while keeping the batteries undamaged. The workcell's adaptability allows it to disassemble various types of devices within the same family and entirely different device types. Each device has a unique casing, different PCB layouts, and varying battery locations, shapes, and sizes. This necessitates an adaptable process for this step.
