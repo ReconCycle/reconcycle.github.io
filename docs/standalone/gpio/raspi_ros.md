@@ -20,12 +20,6 @@ The last two modules serve as a mounting platform for the two Franka Emika Panda
 
 
 
-
-
-## Raspi ROS
-//Not finished
-
-
 Besides robot manipulation capabilities, the implementation of disassembly processes in the
 ReconCycle cell requires the availability of various support functions, which are provided by
 different auxiliary devices. For example, the robot module needs to be able to activate or
@@ -42,10 +36,12 @@ the robots and the auxiliary equipment of other modules, we need to be able to c
 equipment globally throughout the cell. 
 
 
+## Raspi ROS
 
-Therefore we have prepared a ROS package [ROS package](https://github.com/ReconCycle/raspi_ros) that
-wraps the developed software library for configuring and controlling GPIOs in a ROS node.
-This way we enable the configuration and control of auxiliary devices through ROS services.
+
+Raspi ROS is the ROS package [ROS package](https://github.com/ReconCycle/raspi_ros) that
+wraps the developed software library for configuring and controlling Raaspberry GPIOs in a ROS node.
+This way enables the configuration and control of auxiliary devices through ROS services.
 The cell programmer no longer needs to deal with GPIOs but can control and communicate
 with the auxiliary equipment through ROS interfaces.
 
@@ -74,13 +70,11 @@ To simplify the installation and process control of Raspi-ROS package on the mod
 
 
 
-
-
 ## Raspi ROS Terminal Client
 
 
 
-Instead of writing or correcting configuration files manually, the `ROS package <https://github.com/ReconCycle/raspi-ros-client>` offers
+Instead of writing or correcting configuration files manually, the [ROS package](https://github.com/ReconCycle/raspi-ros-client) offers
 a more user-friendly approach to handling configuration files. This package contains
 a client that can communicate with the "Equipment Manager". When the client is started,
 it opens a terminal window user-interface that guides the user through creating or modifying
