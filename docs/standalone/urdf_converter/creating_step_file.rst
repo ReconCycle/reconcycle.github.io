@@ -63,13 +63,3 @@ This is done with proper naming of subassemblies or parts, with template naming 
 ..
    [//]: # "STL also exported automatic"
 
-..
-   Colors..
-<<<<<<< HEAD
-=======
-
-..
-
-   image:: figures_creating_step/tree_shapes.PNG
-   :width: 350px
->>>>>>> 2cdedc8... one image
