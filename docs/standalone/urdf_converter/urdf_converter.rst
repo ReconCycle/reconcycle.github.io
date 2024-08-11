@@ -59,5 +59,6 @@ References
    converting_with_ros
    creating_step_file
    devel_guide
+   urdf_rviz
 
    

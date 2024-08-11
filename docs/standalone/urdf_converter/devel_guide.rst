@@ -29,6 +29,7 @@ Build release docker image:
 
 .. code-block:: bash
     
+    cd urdf-from-step-docker
     docker build -t ghcr.io/reconcycle/urdf-from-step:latest .
 
 Test release docker image:
