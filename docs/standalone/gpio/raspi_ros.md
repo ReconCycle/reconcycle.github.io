@@ -4,12 +4,10 @@
 
 The ROS periphery interface allows users to quickly integrate existing cell periphery into the ROS-based software system. To make the micro-computer
 ROS-compatible, a Pi image with Ubuntu 16.04 and pre-installation of ROS is
-mounted. Installation procedure for a Raspberry Pi image is described in Section 3.1. As the peripheral elements should enable swapping, the ROS instance
-on the micro-computer runs automatically when the periphery interface receives
+mounted. Installation procedure for a Raspberry Pi image is described in Section 3.1. As the peripheral elements should enable swapping, the ROS instance on the micro-computer runs automatically when the periphery interface receives
 power. Standard ROS communication protocols are used to send and receive
 commands on the periphery interface. The commands are then further relayed
-to the peripheral element it controls through a proxy program, which is specific
-to the peripheral element
+to the peripheral element it controls through a proxy program, which is specific to the peripheral element
 
 
 ## Raspi ROS
@@ -65,9 +63,9 @@ The "Equipment Manager" node allows us in these cases to quickly change the "Equ
 
 ## Raspi ROS Terminal Client
 
-//Not finished
-Instead of writing or correcting configuration files manually, the ROS package offers
-[16] a more user-friendly approach to handling configuration files. This package contains
+
+Instead of writing or correcting configuration files manually, the `ROS package <https://github.com/ReconCycle/raspi-ros-client>` offers
+a more user-friendly approach to handling configuration files. This package contains
 a client that can communicate with the "Equipment Manager". When the client is started,
 it opens a terminal window user-interface that guides the user through creating or modifying
 configuration files. At the beginning, the client searches for all "Equipment Managers" from the
@@ -78,10 +76,9 @@ configuration file from the "Equipment Manager". When changing the configuration
 only needs to answer the questions about the various parameter values asked by the terminal
 guide. When the user is satisfied with the desired configuration, the client automatically changes
 the yaml file and sends it to the module "Equipment Manager".
-To simplify the installation and process control of our ROS package on the module’s microcomputer, the ROS package is packed into the Docker container [15] and prepared for the
-automatic setup of the system [18].
 
-https://github.com/ReconCycle/raspi-ros-client
+
+
 
 
 ## RQT
@@ -93,6 +90,12 @@ https://github.com/ReconCycle/digital_interface_msgs
 
 
 ## Docker
+
+To simplify the installation and process control of our ROS package on the module’s microcomputer, the ROS package is packed into the Docker container [15] and prepared for the
+automatic setup of the system [18].
+
+
+
 //Not finished
 https://github.com/ReconCycle/raspi-reconcycle-docker
 
