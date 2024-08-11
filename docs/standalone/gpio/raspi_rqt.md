@@ -1,15 +1,16 @@
-# Raspi RQT
+# Raspi-ros RQT
 
 
-
-
-Offers to change the templates or dirctly control gpios for simulatios and debuging
+When the rqt tool is run, it offers two options: either to update the simulation interface or to change the configuration of individual Raspberry Pi devices.
 
 <img src="/standalone/gpio/figures_rqt/chose_modul.png" />
 
+If you choose to change the configuration, it allows you to modify the settings of all Raspberry Pi computers within reach.
 
-In the case of changing it ofers all templates in reach
 <img src="/standalone/gpio/figures_rqt/Modules.png" />
+
+
+When selecting one of the listed configurations, it displays the current configuration and allows you to make changes. The settings offered include the service name through which a particular GPIO is interfaced and whether the specific GPIO functions as a digital input or output."
 
 <p float="left">
 
@@ -20,5 +21,7 @@ In the case of changing it ofers all templates in reach
 </p>
 
 
-Simulation
+
+In simulation module we can see curent states of digital *** and change the states of digital inputs. **
+
   <img src="/standalone/gpio/figures_rqt/Sim.png" />

@@ -1,13 +1,31 @@
-# ROS managment of Raspberry GPIOs
+# ROS managment of Raspberry Pi GPIOs
 
-//Not finished
 
-The ROS periphery interface allows users to quickly integrate existing cell periphery into the ROS-based software system. To make the micro-computer
-ROS-compatible, a Pi image with Ubuntu 16.04 and pre-installation of ROS is
-mounted. Installation procedure for a Raspberry Pi image is described in Section 3.1. As the peripheral elements should enable swapping, the ROS instance on the micro-computer runs automatically when the periphery interface receives
+
+Raspberry Pi is microcomputer with the ability to generate control signals
+and read the sensor values by attaching the auxiliary devices (equipment) to the GPIOs of
+the Raspberry Pi. When the auxiliary equipment is connected to the GPIOs of the Raspberry
+Pi, each GPIO in use must be properly configured by a suitable software library. Since the
+auxiliary equipment attached to each individual microcomputer needs to work in synchronization with
+the robots and the auxiliary equipment on other microcomputers, there is need to be able to control the
+GPIOs of invidiual microcomputer globally throughout the cell. 
+
+
+
+
+[//]: <> (The ROS periphery interface allows users to quickly integrate existing cell periphery into the ROS-based software system. 
+
+
+
+As the peripheral elements should enable swapping, the ROS instance on the micro-computer runs automatically when the periphery interface receives
 power. Standard ROS communication protocols are used to send and receive
 commands on the periphery interface. The commands are then further relayed
 to the peripheral element it controls through a proxy program, which is specific to the peripheral element
+
+
+
+To make the micro-computer ROS-compatible, a Pi image with Ubuntu 16.04 and pre-installation of ROS is
+mounted. Installation procedure for a Raspberry Pi image is described in [hier](###Installation).
 
 
 
@@ -16,7 +34,6 @@ to the peripheral element it controls through a proxy program, which is specific
 
 These auxiliary devices are controlled by the modules' microcomputers. When the designed module is connected to the ROS network for the first time, the "Equipment Manager" allows easy configuration of the new equipment, which can then be controlled via the "Equipment Server".
 
-The last two modules serve as a mounting platform for the two Franka Emika Panda robots. When the module with the robot is connected to the ReconCycle cell via Plug-and-Produce connectors, the robot control computer mounted in the module launches the robot control action servers, which are needed to control the robot via the ReconCycle cell ROS network. The auxiliary devices on the robot modules, such as tool changers and tools mounted on the robot, are controlled by the module's microcomputer, just like the auxiliary equipment on the other two modules.
 
 
 
@@ -25,19 +42,14 @@ ReconCycle cell requires the availability of various support functions, which ar
 different auxiliary devices. For example, the robot module needs to be able to activate or
 deactivate the pneumatic tool changer mounted on the top of the robot. For modules that
 include an activation unit such as a clamp or a cutter, we need to be able to send activation
-signals and to check the state of the device. 
-We selected Raspberry Pi 4 as the archetypical
-module’s microcomputer. Raspberry Pi provides us with the ability to generate control signals
-and read the sensor values by attaching the auxiliary devices (equipment) to the GPIOs of
-the Raspberry Pi. When the auxiliary equipment is connected to the GPIOs of the Raspberry
-Pi, each GPIO in use must be properly configured by a suitable software library. Since the
-auxiliary equipment attached to each individual module needs to work in synchronization with
-the robots and the auxiliary equipment of other modules, we need to be able to control the
-equipment globally throughout the cell. 
+signals and to check the state of the device.  )
+
+
+
+
 
 
 ## Raspi ROS
-
 
 Raspi ROS is the ROS package [ROS package](https://github.com/ReconCycle/raspi_ros) that
 wraps the developed software library for configuring and controlling Raaspberry GPIOs in a ROS node.
@@ -66,12 +78,11 @@ The "Equipment Manager" node allows to quickly change the "Equipment Server" con
 
 To simplify the installation and process control of Raspi-ROS package on the module’s microcomputer, the ROS package is packed into the [Docker container](https://github.com/ReconCycle/raspi-reconcycle-docker)  and prepared for the
  [automatic setup](https://github.com/ReconCycle/raspberry_reconcycle_init) of the system.
-
+The used microcomputer is Raspberry Pi 4.
 
 
 
 ## Raspi ROS Terminal Client
-
 
 
 Instead of writing or correcting configuration files manually, the [ROS package](https://github.com/ReconCycle/raspi-ros-client) offers
@@ -88,13 +99,9 @@ guide. When the user is satisfied with the desired configuration, the client aut
 the yaml file and sends it to the module "Equipment Manager".
 
 
+## Raspi-ros RQT tool
 
-
-
-## RQT
-//Not finished
-
-[ROS package](https://github.com/ReconCycle/rqt_raspi_ros.git)
+[Raspi-ros rqt tool](https://github.com/ReconCycle/rqt_raspi_ros.git) is an extension of the Raspi-ros terminal client. The tool allows you to modify templates through a graphical interface or directly control GPIOs for simulations."
 
 ## MSGS
 //Not finished
