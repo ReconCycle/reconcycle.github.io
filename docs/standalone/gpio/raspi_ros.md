@@ -13,41 +13,6 @@ GPIOs of invidiual microcomputer globally throughout the cell.
 
 
 
-[//]: <> (The ROS periphery interface allows users to quickly integrate existing cell periphery into the ROS-based software system. 
-
-
-
-As the peripheral elements should enable swapping, the ROS instance on the micro-computer runs automatically when the periphery interface receives
-power. Standard ROS communication protocols are used to send and receive
-commands on the periphery interface. The commands are then further relayed
-to the peripheral element it controls through a proxy program, which is specific to the peripheral element
-
-
-
-To make the micro-computer ROS-compatible, a Pi image with Ubuntu 16.04 and pre-installation of ROS is
-mounted. Installation procedure for a Raspberry Pi image is described in [hier](###Installation).
-
-
-
-
-
-
-These auxiliary devices are controlled by the modules' microcomputers. When the designed module is connected to the ROS network for the first time, the "Equipment Manager" allows easy configuration of the new equipment, which can then be controlled via the "Equipment Server".
-
-
-
-
-Besides robot manipulation capabilities, the implementation of disassembly processes in the
-ReconCycle cell requires the availability of various support functions, which are provided by
-different auxiliary devices. For example, the robot module needs to be able to activate or
-deactivate the pneumatic tool changer mounted on the top of the robot. For modules that
-include an activation unit such as a clamp or a cutter, we need to be able to send activation
-signals and to check the state of the device.  )
-
-
-
-
-
 
 ## Raspi ROS
 
@@ -75,7 +40,8 @@ The "Equipment Manager" node allows to quickly change the "Equipment Server" con
 
 ### Installation
 
-
+To make the micro-computer ROS-compatible, a Pi image with Ubuntu 16.04 and pre-installation of ROS is
+mounted.
 To simplify the installation and process control of Raspi-ROS package on the module’s microcomputer, the ROS package is packed into the [Docker container](https://github.com/ReconCycle/raspi-reconcycle-docker)  and prepared for the
  [automatic setup](https://github.com/ReconCycle/raspberry_reconcycle_init) of the system.
 The used microcomputer is Raspberry Pi 4.
@@ -102,13 +68,6 @@ the yaml file and sends it to the module "Equipment Manager".
 ## Raspi-ros RQT tool
 
 [Raspi-ros rqt tool](https://github.com/ReconCycle/rqt_raspi_ros.git) is an extension of the Raspi-ros terminal client. The tool allows you to modify templates through a graphical interface or directly control GPIOs for simulations."
-
-## MSGS
-//Not finished
-https://github.com/ReconCycle/digital_interface_msgs
-
-
-
 
 
 
