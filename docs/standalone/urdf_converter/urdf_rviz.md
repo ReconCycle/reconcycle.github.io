@@ -4,6 +4,12 @@
 
 UrdfComposer is an [RViz plugin](https://github.com/ReconCycle/rviz_plugin_urdf_composer.git) that enables the simple composition of complex URDF xacros from the elemental xacros created with the ROS package [urdf_from_step](https://github.com/ReconCycle/urdf_from_step). It works by using a special xacro file that, in correspondence with parameters in a YAML file, includes elemental xacros in the desired configuration.
 
+
+Tool is started with:
+```bash
+roslaunch rviz_plugin_urdf_composer urdf_composer.launch
+```
+
 The composed xacros can be created from scratch using the 'Initialize empty config file' button, or an existing xacro can be modified by selecting 'Select config YAML file'.
 
 <img src="/standalone/urdf_converter/figures_rviz/tool.png" />
