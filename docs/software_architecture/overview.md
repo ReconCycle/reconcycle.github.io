@@ -83,4 +83,4 @@ New skills (robot operations, vision tasks, pneumatic control, ...) can be devel
 
 ## Helping tools
 
-A number of tools that facilitate fast and simple workflow programming have been developed, including automatic URDF files generation from STEP models and a tool for kinesthetic guidance, which allows storing robot poses and motions into a database.
+A number of tools that facilitate fast and simple workflow programming have been developed, including automatic URDF files generation from STEP models, automatic FlexBE state generation using Jinja templating, and a tool for kinesthetic guidance, which allows storing robot poses and motions into a database.
