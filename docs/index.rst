@@ -38,6 +38,8 @@ Documentation is organized as follows. The *Overview* section highlights key com
 The *Manuals* section includes detailed user guides on hardware setup, the simulation system, the robot skill library, and the vision system. It also provides developer documentation for implementing new robotic skills and visual routines, along with example programs and tutorials for programming new disassembly tasks.
 The section on *Standalone tools* describes standalone applications and scripts designed to support the implementation of common tasks within the ReconCycle ecosystem. These tools aim to improve the overall efficiency of programming the system. They include tools to create URDF models from CAD files in STEP format, and Raspberry GPIO configuration utilities, among others.
 
+Some parts of the documentation are only accessible to project partners via a `dedicated website <https://www.reconcycle.eu/documentation/confidential>`_. They cover hardware specifications of the modular platform and in-depth documentation on controllers.
+
 References
 ==========
 
