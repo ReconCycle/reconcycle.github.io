@@ -1,11 +1,45 @@
 # Vision System
 
-TODO: Training the Vision System
+This guide explains briefly how to create a dataset and train the different models.
 
 
-## Dataset Creation and Training
+## YOLOv8 Segmentation Model for Devices and Components
 
-## Labelling Images with Segmentation for use with Yolact
+1. Label a dataset using [Labelme](https://github.com/wkentaro/labelme). 
+2. Train on the dataset using [YOLOv8](git@github.com:ultralytics/ultralytics.git).
+3. In `vision_pipeline/config.yaml` set the paths correctly:
+```yaml
+model: yolov8
+
+yolov8_model_file: ~/vision_pipeline/data_limited/yolov8/output_2024-07-17_20000_incl_new_jsi_imgs_p2/epoch60.pt
+yolov8_score_threshold: 0.5
+```
+
+## Classification Model
+
+1. Train the classifier in [https://github.com/ReconCycle/device_reid](https://github.com/ReconCycle/superglue_training)
+2. In `vision_pipeline/config.yaml` set the paths correctly:
+```yaml
+classifier_model_file: "~/vision_pipeline/data_limited/classifier/2024-07-19__14-32_classify/lightning_logs/version_0/checkpoints/epoch=339-step=339.ckpt"
+classifier_threshold: 0.2
+classifier_allow_list: ["kalo", "hekatron", "fumonic"]
+```
+
+## Rotation Estimation Model (SuperGlue)
+
+1. Train the SuperGlue model in [https://github.com/ReconCycle/superglue_training](https://github.com/ReconCycle/superglue_training).
+2. In `vision_pipeline/config.yaml` set the paths correctly:
+```yaml
+superglue_templates: ~/datasets2/reconcycle/2023-12-04_hcas_fire_alarms_sorted_cropped
+superglue_model_file: "~/superglue_training/output/train/2024-06-26_superglue_model_evens_finished/weights/best.pt"
+
+superglue_match_threshold: 0.5
+rotation_median_filter: False
+superglue_visualise_to_file: False #! saves images... don't run all the time
+```
+
+
+<!-- ## Labelling Images with Segmentation for use with Yolact
 
 ```bash
 git clone https://github.com/wkentaro/labelme
@@ -45,9 +79,9 @@ For example:
 
 ### Create Train Test Split from COCO .json file
 
-Use the script in `tools/coco-train-test-split/cocosplit.py` to split the COCO .json file into a train.json and test.json.
+Use the script in `tools/coco-train-test-split/cocosplit.py` to split the COCO .json file into a train.json and test.json. -->
 
-## How to Train Yolact
+<!-- ## How to Train Yolact
 
 In this project this [Yolact API](https://github.com/sebastian-ruiz/yolact) is used.
 
@@ -68,7 +102,7 @@ $ python -m yolact.train --config=coco_ndds_config --resume=weights/****_interru
 ```
 For training on less data, reduce the save_interval. On few real images use `--save_interval=200` instead.
 
-5. To view logs run: `tensorboard --logdir=yolact/runs`.
+5. To view logs run: `tensorboard --logdir=yolact/runs`. -->
 
 <!-- First we train on synthetic data.
 

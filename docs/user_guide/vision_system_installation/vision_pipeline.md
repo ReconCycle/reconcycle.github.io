@@ -21,15 +21,26 @@ git clone git@github.com:ReconCycle/ros_vision_pipeline.git
 git submodule update --init --recursive
 ```
 
-In the `docker-compose.yml` file, the volumes should be set correctly.
 
-3. Clone [vision_pipeline](https://github.com/ReconCycle/vision_pipeline):
+
+3. Clone [vision_pipeline](https://github.com/ReconCycle/vision_pipeline) and additional software:
 ```bash
 git clone git@github.com:ReconCycle/vision_pipeline.git
+git clone git@github.com:ReconCycle/device_reid.git
+git clone git@github.com:ReconCycle/superglue_training.git
 ```
 
-3. Copy the directory from the Nextcloud Reconcycle repository [git-data/vision-pipeline/data](https://cloud.reconcycle.eu/f/21297) to the `vision-pipeline/data_limited` folder.
-4. `cp config.example.yaml config.yaml`
+4. In the `docker-compose.yml` file, the volumes should be set correctly.
+```yaml
+volumes:
+    - $HOME/path/to/vision_pipeline:/home/docker/vision_pipeline
+    - $HOME/path/to/device_reid:/home/docker/device_reid
+    - $HOME/path/to/superglue_training:/home/docker/superglue_training
+```
+
+5. Copy the directory from the Nextcloud Reconcycle repository [git-data/vision-pipeline/data](https://cloud.reconcycle.eu/f/21297) to the `vision-pipeline/data_limited` folder.
+6. `cp config.example.yaml config.yaml`
+
 
 ## Running The Pipeline
 
