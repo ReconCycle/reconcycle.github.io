@@ -135,88 +135,56 @@ A class that contains all the steps needed to open the KaloRemotus smoke detecto
 Skill for levering out a PCB from an HCA object.
 - **`__init__`**: Initializes the levering skill with action arguments and description.
 - **`get_valid_args_regex`**: Returns a valid regex for PDDL arguments based on object classes.
-- **`on_enter_pddl`**: Wrapper for `on_enter`.
-- **`on_enter`**: Placeholder for skill initialization.
-- **`execute`**: Placeholder for execution.
-- **`on_exit`**: Placeholder for exiting the skill.
 - **`pddl_init`**: Static method to modify the PDDL environment.
-- **`pddl_loop`**: Dynamic method to update the PDDL problem&#8203;:contentReference[oaicite:0]{index=0}.
-
-## 2. `levering_pddl.py`
+- **`pddl_loop`**: Dynamic method to update the PDDL problem
 
 ### Class: `LeveringPDDLWrapper`
 PDDL wrapper for the levering skill.
 - **`__init__`**: Initializes the PDDL action for levering with robot, location, and object arguments.
 - **`pddl_init`**: Adds the levering action and its preconditions to the PDDL problem.
-- **`pddl_loop`**: Dynamically updates the PDDL environment&#8203;:contentReference[oaicite:1]{index=1}.
-
-## 3. `linear_cut_pddl.py`
+- **`pddl_loop`**: Dynamically updates the PDDL environment
 
 ### Class: `LinearPneumaticCuttingPDDLWrapper`
 PDDL wrapper for using a pneumatic guillotine-style cutter.
-- **`__init__`**: Defines the action for cutting a battery from a PCB with location and object arguments.
+- **`__init__`**: Defines the action for removing a battery from a PCB by cutting, with pose and type arguments.
 - **`pddl_init`**: Adds a cutting action and preconditions for location and object to the PDDL problem.
-- **`pddl_loop`**: Continuously updates the PDDL environment during execution&#8203;:contentReference[oaicite:2]{index=2}.
-
-## 4. `pin_push_pddl.py`
+- **`pddl_loop`**: Continuously updates the PDDL environment during execution
 
 ### Class: `PinpushPDDLWrapper`
 PDDL wrapper for pushing a pin out of an object.
-- **`__init__`**: Defines the action for pushing a pin from an object with robot, location, and object arguments.
+- **`__init__`**: Defines the action for pushing a pin from an object with robot object, location, and type arguments.
 - **`pddl_init`**: Adds the pin-pushing action with its preconditions to the PDDL problem.
-- **`pddl_loop`**: Dynamically updates the PDDL problem&#8203;:contentReference[oaicite:3]{index=3}.
-
-## 5. `robot_homing_pddl.py`
+- **`pddl_loop`**: Dynamically updates the PDDL problem
 
 ### Class: `RobotHomingPDDLWrapper`
 PDDL wrapper for homing a robot.
 - **`__init__`**: Initializes the homing action with a robot argument.
 - **`pddl_init`**: Adds the homing action and its effects to the PDDL problem.
-- **`pddl_loop`**: Continuously updates the PDDL environment during execution&#8203;:contentReference[oaicite:4]{index=4}.
-
-## 6. `move_pddl.py`
+- **`pddl_loop`**: Continuously updates the PDDL environment during execution
 
 ### Class: `MoveObjectPDDLWrapper`
 PDDL wrapper for moving an object to a new location.
 - **`__init__`**: Defines the action for moving an object with robot, location, and object arguments.
 - **`pddl_init`**: Adds the move action and preconditions to the PDDL problem.
-- **`pddl_loop`**: Updates the PDDL environment dynamically&#8203;:contentReference[oaicite:5]{index=5}.
-
-## 7. `look_at_table.py`
+- **`pddl_loop`**: Updates the PDDL environment dynamically
 
 ### Class: `LookAtTable`
 Skill for moving a robot with an eye-in-hand camera to inspect a table.
 - **`__init__`**: Initializes the skill with a TF manager and configuration file.
-- **`on_enter_pddl`**: Wrapper for `on_enter`.
 - **`on_enter`**: Moves the robot to look at a specific table and subframe.
-- **`execute`**: Placeholder for execution.
-- **`on_exit`**: Placeholder for exiting the skill&#8203;:contentReference[oaicite:6]{index=6}.
-
-## 8. `robot_homing.py`
 
 ### Class: `RobotHoming`
 Skill for homing a robot.
-- **`__init__`**: Initializes the homing skill.
 - **`on_enter`**: Moves the robot to its home position.
 - **`execute`**: Placeholder for execution.
-- **`on_exit`**: Placeholder for exiting the skill&#8203;:contentReference[oaicite:7]{index=7}.
-
-## 9. `pickup_detector_top.py`
+- **`on_exit`**: Placeholder for exiting the skill
 
 ### Class: `PickupDetectorTop`
-Skill for picking up a detector object using a robot's gripper.
+Skill for picking up a smoke detector object using a robot's gripper.
 - **`__init__`**: Initializes the skill with robot parameters, gripper settings, and movement configuration.
-- **`on_enter_pddl`**: Wrapper for `on_enter`.
-- **`on_enter`**: Moves the robot to pick up the detector based on the provided object class and location.
-- **`execute`**: Placeholder for execution.
-- **`on_exit`**: Placeholder for exiting the skill&#8203;:contentReference[oaicite:8]{index=8}.
-
-## 10. `pickup_object.py`
+- **`on_enter`**: Moves the robot to pick up the smoke detector based on the provided object class and location.
 
 ### Class: `PickupObject`
 Skill for picking up objects with a robot gripper.
 - **`__init__`**: Initializes the pickup skill with robot settings, offset, and controller options.
-- **`on_enter_pddl`**: Wrapper for `on_enter`.
 - **`on_enter`**: Executes the pick-up sequence based on object class, location, and robot settings.
-- **`execute`**: Placeholder for execution.
-- **`on_exit`**: Placeholder for exiting the skill&#8203;:contentReference[oaicite:9]{index=9}.
