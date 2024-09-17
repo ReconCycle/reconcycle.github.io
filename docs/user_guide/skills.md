@@ -1,7 +1,6 @@
 # Skill Library 
 
-##Overview
-
+## Overview
 Commonly used robot (or peripheral machine) operations/[skills](https://github.com/ReconCycle/disassembly_toolkit/tree/main/disassembly_pipeline/skills) are encapsulated within Skill classes, so they can be easily used either stand-alone or within a FlexBe state. An [abstract base skill](https://github.com/ReconCycle/disassembly_toolkit/blob/main/disassembly_pipeline/skills/base_skill.py) is also defined.
 
 Common guidelines for developing skills are:
@@ -16,7 +15,7 @@ All skills inherit from `BaseSkill` and every skill is called with the `on_enter
 ##Available skills
 The list of available skills, their descriptions and input arguments is below:
 
-# Class/Method Overview
+## Class/Method Overview
 
 ### Class: `BaseSkill`
 Abstract base class for all skills, defining the framework for skill execution.
@@ -119,7 +118,7 @@ A data class for representing drilling tasks.
 
 ### Class: `KaloRemotusOpening`
 A skill for opening the KaloRemotus smoke detector using the QB VSA gripper.
-- **`__init__`**: Initializes the skill with specific robot and gripper parameters.
+- **`__init__`**: Initializes the skill with specific robot object and gripper parameters.
 - **`on_enter`**: Executes the process of opening the smoke detector.
 
 ### Class: `QBKaloDisassembly`
@@ -140,7 +139,7 @@ Skill for levering out a PCB from an HCA object.
 
 ### Class: `LeveringPDDLWrapper`
 PDDL wrapper for the levering skill.
-- **`__init__`**: Initializes the PDDL action for levering with robot, location, and object arguments.
+- **`__init__`**: Initializes the PDDL action for levering with robot object, location, and object arguments.
 - **`pddl_init`**: Adds the levering action and its preconditions to the PDDL problem.
 - **`pddl_loop`**: Dynamically updates the PDDL environment
 
@@ -158,7 +157,7 @@ PDDL wrapper for pushing a pin out of an object.
 
 ### Class: `RobotHomingPDDLWrapper`
 PDDL wrapper for homing a robot.
-- **`__init__`**: Initializes the homing action with a robot argument.
+- **`__init__`**: Initializes the homing action with a robot object argument.
 - **`pddl_init`**: Adds the homing action and its effects to the PDDL problem.
 - **`pddl_loop`**: Continuously updates the PDDL environment during execution
 
@@ -169,7 +168,7 @@ PDDL wrapper for moving an object to a new location.
 - **`pddl_loop`**: Updates the PDDL environment dynamically
 
 ### Class: `LookAtTable`
-Skill for moving a robot with an eye-in-hand camera to inspect a table.
+Skill for moving a robot object with an eye-in-hand camera to inspect a table.
 - **`__init__`**: Initializes the skill with a TF manager and configuration file.
 - **`on_enter`**: Moves the robot to look at a specific table and subframe.
 
@@ -188,3 +187,48 @@ Skill for picking up a smoke detector object using a robot's gripper.
 Skill for picking up objects with a robot gripper.
 - **`__init__`**: Initializes the pickup skill with robot settings, offset, and controller options.
 - **`on_enter`**: Executes the pick-up sequence based on object class, location, and robot settings.
+
+### Class: `UnscrewingPDDLWrapper`
+PDDL wrapper for the unscrewing skill.
+- **`__init__`**: Initializes the action for unscrewing with robot object and object type arguments.
+- **`pddl_init`**: Adds the unscrewing action and its preconditions to the PDDL problem.
+- **`pddl_loop`**: Dynamically updates the PDDL environment during execution
+
+### Class: `TurnObjectPDDLWrapper`
+PDDL wrapper for the turn object skill.
+- **`__init__`**: Defines the action for turning an object with a robot object, location, and type arguments.
+- **`pddl_init`**: Adds the turning action and preconditions to the PDDL problem.
+- **`pddl_loop`**: Updates the PDDL environment dynamically during execution
+
+### Class: `WigglingBatteryRemovalPDDLWrapper`
+PDDL wrapper for the wiggling battery removal skill.
+- **`__init__`**: Initializes the action for removing a battery by wiggling it free using a robot.
+- **`pddl_init`**: Adds the battery removal action and its preconditions to the PDDL problem.
+- **`pddl_loop`**: Continuously updates the PDDL environment during operation
+
+### Class: `VisualServoing`
+Skill for using visual servoing to adjust the robot's position based on feedback from a vision system.
+- **`__init__`**: Initializes the visual servoing skill with a robot object and vision system settings.
+- **`on_enter`**: Centers the robot's camera on a detected object and adjusts positioning.
+- **`step`**: Takes a step to move the robot based on object detection.
+- **`get_positioning_error`**: Calculates the positioning error between the camera and the object
+
+### Class: `FlipObject`
+Skill for flipping an object using a robot.
+- **`__init__`**: Initializes the flipping skill with robot parameters and controller settings.
+- **`on_enter`**: Moves the robot into position to flip the object.
+- **`robot_flip_object`**: Contains the logic for flipping an object with the robot
+
+### Class: `Unscrewing`
+Skill for unscrewing a screw using a robot.
+- **`__init__`**: Initializes the unscrewing skill with robot settings, controller options, and movement parameters.
+- **`on_enter`**: Moves the robot into position to unscrew a screw.
+
+### Class: `WigglingBatteryRemoval`
+Skill for removing a battery by wiggling it out using a robot.
+- **`__init__`**: Initializes the wiggling battery removal skill with a TF manager.
+- **`on_enter`**: Detects a battery using a vision system and removes it by wiggling.
+- **`rocking_grasp_object`**: Grasp and perform rocking motions to wiggle a battery free.
+- **`wiggle_motion`**: Performs the actual wiggling motion with the robot.
+- **`rocking_complete_callback_based_on_position`**: Callback function to detect if rocking has successfully dislodged the battery based on position change.
+- **`rocking_complete_callback_based_on_force`**: Callback function to detect rocking success based on force feedback
