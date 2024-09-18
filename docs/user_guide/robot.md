@@ -22,6 +22,7 @@ Below we provide a quick guide to operate the robot and access is basic function
 Franka Desk is robot's internal GUI. You can think of it as a replacement for teach pendant. It can be accessed via browser at the IP address of the robot, which is printed on each robot module.
 
 The user inferaface is composed of thre sections (main pane, with currently running task; bottom pane with task and app overview and sidebar with status overview):
+
 <img src="/figures/control/desk.png" width="300px" />
 
 
@@ -45,4 +46,8 @@ Additionaly, this interface shuld be enabled using the External Activation devic
 
 ## Running ReconCycle controllers
 
+The controllers run on dedicated computers with real-time Linux kernel. Once, you are connected to the computer, the controllers can be started using the `run-controllers` utility which launches the necessary ROS nodes.
+
 ## Using Robot Blockset library
+
+See documentation availiable via [repository](https://repo.ijs.si/leon/robotblockset_python/).
