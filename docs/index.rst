@@ -17,7 +17,6 @@ Welcome to ReconCycle project documentation!
 
    user_guide/index
    developer_guide/index
-   tutorials/index
 
 .. toctree::
    :maxdepth: 2
